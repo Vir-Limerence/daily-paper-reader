@@ -1,0 +1,480 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-04T20:49:43.131510+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 12,
+    "deep_cap": 6,
+    "deep_selected": 11,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2605.29076v2",
+      "source": "arxiv",
+      "title": "Structured Prompt Optimization Meets Reinforcement Learning for Global and Local Interpretability over Complex Text",
+      "abstract": "LLMs have advanced text classification, yet existing paradigms face a trade-off: supervised (label only) fine-tuning is scalable but offers limited reasoning on complex text and lacks broader model transparency, while discrete prompt optimization offers human-readable instructions but struggles with performance and scalability. We introduce eXTC (eXplainable Text Classifier) with three progressive stages: (1) learning a Standard Operating Procedure (SOP, or rulebook) in natural language via a new Structured Prompt Optimization algorithm; (2) SOP-grounded reasoning distillation from a large teacher LLM into a compact LM; and (3) expanding reasoning capabilities beyond the initial SOP via reinforcement learning. This design enables eXTC to provide (i) fast inference via a compact LM, with (ii) inference-time local reasoning traces, alongside a global, modular explanation of its learned domain rules, while (iii) significantly outperforming existing paradigms across diverse benchmarks in both classification performance and explanation quality, with stage-by-stage gains.",
+      "authors": [
+        "Tianyang Zhou",
+        "Wenbo Chen",
+        "Pierre Jinghong Liang",
+        "Leman Akoglu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-27T20:29:41+00:00",
+      "link": "https://arxiv.org/pdf/2605.29076v2",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Proposes Structured Prompt Optimization to learn natural language rulebooks, then distill and expand with RL.",
+      "llm_evidence_cn": "提出结构化提示优化算法学习自然语言规则手册，并通过推理蒸馏与强化学习扩展。",
+      "llm_evidence": "提出结构化提示优化算法学习自然语言规则手册，并通过推理蒸馏与强化学习扩展。",
+      "canonical_evidence": "提出结构化提示优化算法学习自然语言规则手册，并通过推理蒸馏与强化学习扩展。",
+      "llm_tldr_en": "Introduces eXTC, a framework combining structured prompt optimization, reasoning distillation, and RL to produce explainable text classifiers with improved transparency and performance.",
+      "llm_tldr_cn": "针对文本分类中监督微调可解释性差和离散提示优化扩展性弱的难题，本文提出eXTC框架，先通过结构化提示优化算法从教师模型蒸馏出自然语言标准操作程序（SOP），再结合强化学习扩展推理能力，在保持高性能的同时提供全局与局部可解释性。实验表明该方法在多个复杂文本基准上超越纯黑箱模型，为可信自然语言处理提供了新工具。",
+      "llm_tldr": "针对文本分类中监督微调可解释性差和离散提示优化扩展性弱的难题，本文提出eXTC框架，先通过结构化提示优化算法从教师模型蒸馏出自然语言标准操作程序（SOP），再结合强化学习扩展推理能力，在保持高性能的同时提供全局与局部可解释性。实验表明该方法在多个复杂文本基准上超越纯黑箱模型，为可信自然语言处理提供了新工具。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.04465v1",
+      "source": "arxiv",
+      "title": "SePO: Self-Evolving Prompt Agent for System Prompt Optimization",
+      "abstract": "System prompt optimization improves agent behavior without modifying the underlying model, yielding human-readable, model-agnostic instructions. Existing methods build a prompt agent that refines task agents' system prompts, yet leave the prompt agent's own system prompt hand-engineered and fixed. We propose Self-Evolving Prompt Optimization (SePO), which treats the prompt agent's own system prompt as an optimization target alongside task agents' system prompts. SePO adopts a self-referential design. A single prompt agent improves both task agents' system prompts and its own under an open-ended evolutionary search that maintains an archive of candidate prompts as stepping stones. Training proceeds in two stages: pre-training evolves the prompt agent on a multi-task pool, and fine-tuning then applies it to a target task. Across five benchmarks spanning math (AIME'25), abstract reasoning (ARC-AGI-1), graduate-level science (GPQA), code generation (MBPP), and logic puzzles (Sudoku), SePO consistently outperforms Manual-CoT, TextGrad, and MetaSPO, improving the average accuracy by 4.49 points compared to Manual-CoT. The prompt optimization skill from pre-training also generalizes to tasks beyond the pre-training mixture, rather than memorizing per-task prompts.",
+      "authors": [
+        "Wangcheng Tao",
+        "Han Wu",
+        "Weng-Fai Wong"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-06-03T05:20:30+00:00",
+      "link": "https://arxiv.org/pdf/2606.04465v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Proposes self-evolving prompt agent with evolutionary search to automate system prompt optimization.",
+      "llm_evidence_cn": "提出自进化的提示代理，通过进化搜索自动优化系统提示",
+      "llm_evidence": "提出自进化的提示代理，通过进化搜索自动优化系统提示",
+      "canonical_evidence": "提出自进化的提示代理，通过进化搜索自动优化系统提示",
+      "llm_tldr_en": "SePO treats the prompt agent's own system prompt as an optimization target, using evolutionary search to iteratively improve prompts for both itself and task agents, enabling automated and human-readable prompt optimization.",
+      "llm_tldr_cn": "现有的提示优化方法仅优化任务代理的系统提示，而提示代理自身的提示仍靠人工设计。SePO将提示代理自身的系统提示也纳入优化目标，采用自参考设计，通过进化搜索维护候选提示档案，分阶段训练不断改进任务代理和自身的系统提示，实现完全自动化的提示优化，生成的提示具有可读性且不修改底层模型。",
+      "llm_tldr": "现有的提示优化方法仅优化任务代理的系统提示，而提示代理自身的提示仍靠人工设计。SePO将提示代理自身的系统提示也纳入优化目标，采用自参考设计，通过进化搜索维护候选提示档案，分阶段训练不断改进任务代理和自身的系统提示，实现完全自动化的提示优化，生成的提示具有可读性且不修改底层模型。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.04661v1",
+      "source": "arxiv",
+      "title": "CRAFT: Cost-aware Refinement And Front-aware Tuning of Prompts",
+      "abstract": "Prompts tuned for accuracy often grow long, raising inference cost on every model call. The best accuracy-cost trade-off depends on the task and the budget, so prompt optimization is a search over the Pareto front of accuracy and prompt-token cost rather than for one prompt. The usual shortcut, collapsing the objectives into a weighted sum, fixes the trade-off weight before search and often recovers only a narrow region of the front, a failure we call scalarization collapse. We present CRAFT (Cost-aware Refinement And Front-aware Tuning), a Pareto-front prompt optimizer that treats target-LLM validation calls as the scarce resource and allocates them to candidates near the optimistic candidate front. Each round, complementary accuracy-oriented and cost-oriented generators propose edits, Pareto-gap acquisition spends the per-round validation budget, and NSGA-II retention keeps a spread-out population. Across six classification and reasoning benchmarks, CRAFT's retained fronts reach both high-accuracy and low-cost regions, while accuracy-only, cost-only, and weighted-sum baselines each concentrate in narrower regions. The accuracy-cost trade-off becomes a post-search choice, not a pre-search weight.",
+      "authors": [
+        "Shanu Kumar",
+        "Shubhanshu Khandelwal",
+        "Akhila Yesantarao Venkata",
+        "Parag Agrawal",
+        "Yova Kementchedjhieva",
+        "Manish Gupta"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-06-03T09:40:03+00:00",
+      "link": "https://arxiv.org/pdf/2606.04661v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Pareto-front prompt optimizer that trades off accuracy and token-cost, avoiding scalarization collapse.",
+      "llm_evidence_cn": "帕累托前沿提示优化器，兼顾准确性与token成本，避免标量化崩溃。",
+      "llm_evidence": "帕累托前沿提示优化器，兼顾准确性与token成本，避免标量化崩溃。",
+      "canonical_evidence": "帕累托前沿提示优化器，兼顾准确性与token成本，避免标量化崩溃。",
+      "llm_tldr_en": "CRAFT optimizes prompts by searching the Pareto front of accuracy and prompt-token cost, preventing scalarization collapse and efficiently allocating validation calls to promising candidates, achieving better trade-offs than weighted-sum methods.",
+      "llm_tldr_cn": "现有提示优化常因追求准确率导致提示过长、推理成本高，且加权求和法易陷入标量化崩溃，仅覆盖狭窄前沿。本文提出CRAFT，一种面向帕累托前沿的提示优化器，将目标LLM验证调用作为稀缺资源分配给近似最优候选，通过互补的准确率导向和成本导向变异器交替优化，最终输出整个前沿而非单点，使用户可按预算选择。实验表明，CRAFT比加权求和法覆盖更广前沿，实现更高准确率-成本权衡效率，为自动化提示优化提供了实用的多目标搜索框架。",
+      "llm_tldr": "现有提示优化常因追求准确率导致提示过长、推理成本高，且加权求和法易陷入标量化崩溃，仅覆盖狭窄前沿。本文提出CRAFT，一种面向帕累托前沿的提示优化器，将目标LLM验证调用作为稀缺资源分配给近似最优候选，通过互补的准确率导向和成本导向变异器交替优化，最终输出整个前沿而非单点，使用户可按预算选择。实验表明，CRAFT比加权求和法覆盖更广前沿，实现更高准确率-成本权衡效率，为自动化提示优化提供了实用的多目标搜索框架。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28069v1",
+      "source": "arxiv",
+      "title": "ZipRL: Adaptive Multi-Turn Context Compression with Hindsight Response Replay",
+      "abstract": "Adaptive context compression is vital for scaling Large Language Models (LLMs) to complex, multi-turn agent tasks. However, rule-based compression methods may discard task-critical nuances, while Reinforcement Learning (RL) approaches usually struggle to balance information retention and token efficiency under the sparse rewards inherent to long-horizon workflows. To bridge this gap, we propose ZipRL, a novel adaptive compression framework tailored for Reinforcement Learning from Verifiable Rewards (RLVR). ZipRL features a multi-granularity compression mechanism for active, non-uniform information reduction, coupled with Hindsight Response Replay (HRR), a technique designed to densify training signals during RLVR optimization. Theoretically, we prove ZipRL's superior task-relevant utility over uniform methods. Concretely, ZipRL utilizes coarse-to-fine prompts for macro-compression and incorporates HRR into GRPO via generalized advantage reshaping. Multiple models of varying versions and parameter scales validate the effectiveness of our approach. Benchmarks on five agent tasks show ZipRL outperforms state-of-the-art approaches by 27.9% and 34.7% across Qwen3-4B and Qwen3-8B models, while maintaining exceptional token efficiency and robustness under extreme 256-turn extrapolation stress tests.",
+      "authors": [
+        "Zhexin Hu",
+        "Li Wang",
+        "Xiaohan Wang",
+        "Jiajun Chai",
+        "Xiaojun Guo",
+        "Wei Lin",
+        "Guojun Yin"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-27T07:26:34+00:00",
+      "link": "https://arxiv.org/pdf/2605.28069v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "adaptive RL-based compression of multi-turn prompts to balance information and token efficiency",
+      "llm_evidence_cn": "基于强化学习的自适应多轮提示词压缩方法，平衡信息保留与令牌效率",
+      "llm_evidence": "基于强化学习的自适应多轮提示词压缩方法，平衡信息保留与令牌效率",
+      "canonical_evidence": "基于强化学习的自适应多轮提示词压缩方法，平衡信息保留与令牌效率",
+      "llm_tldr_en": "ZipRL proposes an adaptive context compression framework using RL with hindsight response replay for dense training signals, achieving efficient multi-turn agent task execution.",
+      "llm_tldr_cn": "ZipRL 针对大型语言模型在复杂多轮代理任务中上下文压缩的重要性，解决了基于规则的方法可能丢弃关键细节、强化学习方法难平衡信息保留与令牌效率的问题，提出了一种面向可验证奖励强化学习（RLVR）的自适应压缩框架，采用多粒度压缩机制进行非均匀信息缩减，并结合后见响应重放（HRR）技术增强训练信号密度。实验验证了其在多轮任务中的有效性，显著提升了上下文效率和任务执行效果。",
+      "llm_tldr": "ZipRL 针对大型语言模型在复杂多轮代理任务中上下文压缩的重要性，解决了基于规则的方法可能丢弃关键细节、强化学习方法难平衡信息保留与令牌效率的问题，提出了一种面向可验证奖励强化学习（RLVR）的自适应压缩框架，采用多粒度压缩机制进行非均匀信息缩减，并结合后见响应重放（HRR）技术增强训练信号密度。实验验证了其在多轮任务中的有效性，显著提升了上下文效率和任务执行效果。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29816v1",
+      "source": "arxiv",
+      "title": "Harnessing non-adversarial robustness in large language models",
+      "abstract": "The work presents an approach for addressing the challenge of robustness in Large Language Models (LLMs) to alterations and potential errors caused by semantically similar but textually different prompts. Recent works have shown that these kinds of prompt variations can significantly impact the performance of LLMs on tasks. The central question is: can LLMs' robustness to semantically-neutral prompt alterations be acquired without expensive retraining of the entire model? We address this question both theoretically and through experiments. Our theoretical analysis reveals a crucial factor impacting model robustness - a systematic expected shift or perturbation-induced bias in neural network module outputs. Motivated by this analysis, we show that robustness can be achieved via a simple fine-tuning process: debiasing for robustness. We identify conditions when debiasing helps and when it does not, and demonstrate, through both theory and extensive experiments, that debiasing for robustness may indeed be a quick and efficient tool to enhance robustness and provide certification against random prompt perturbations.",
+      "authors": [
+        "Qinghua Zhou",
+        "Ellina Aleshina",
+        "Andrey Lovyagin",
+        "Oleg Somov",
+        "Mikhail Seleznyov",
+        "Alexander Panchenko",
+        "Ivan Oseledets",
+        "Elena Tutubalina",
+        "Ivan Y. Tyukin"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-28T12:00:00+00:00",
+      "link": "https://arxiv.org/pdf/2605.29816v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Proposes method to improve LLM robustness to prompt variations by correcting perturbation-induced bias, enabling more reliable prompt performance.",
+      "llm_evidence_cn": "提出通过校正扰动偏差来提高模型对提示变体的鲁棒性，使提示性能更稳定",
+      "llm_evidence": "提出通过校正扰动偏差来提高模型对提示变体的鲁棒性，使提示性能更稳定",
+      "canonical_evidence": "提出通过校正扰动偏差来提高模型对提示变体的鲁棒性，使提示性能更稳定",
+      "llm_tldr_en": "The paper addresses LLM sensitivity to semantically similar but textually different prompts, proposing a theoretically motivated method to reduce perturbation-induced bias in network outputs, thus improving robustness without full retraining.",
+      "llm_tldr_cn": "大语言模型对语义相似但文本不同的提示变体非常敏感，影响性能。本文理论分析揭示了神经网络输出中的系统性期望偏移，并提出一种无需全面重训练的方法来校正这种偏差，从而增强模型对提示变体的鲁棒性，使得相同语义的指令能获得更一致的输出。",
+      "llm_tldr": "大语言模型对语义相似但文本不同的提示变体非常敏感，影响性能。本文理论分析揭示了神经网络输出中的系统性期望偏移，并提出一种无需全面重训练的方法来校正这种偏差，从而增强模型对提示变体的鲁棒性，使得相同语义的指令能获得更一致的输出。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "optimizing natural language instructions for model performance",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.31513v1",
+      "source": "arxiv",
+      "title": "Personalize Your Large Vision-language Models With In-context Prompt Tuning",
+      "abstract": "Large vision-language models (LVLMs) have demonstrated strong general multimodal capability and are increasingly deployed in downstream systems. This trend has driven growing interest in LVLM personalization, which aims to enable models to quickly and effectively learn out-of-distribution multimodal concepts to meet user-specific needs. However, many existing methods rely on inference-time training, which reduces efficiency. They also struggle to maintain accuracy in complex multi-image, multi-concept settings. These limitations restrict the broader deployment of LVLM-based systems. Therefore, this paper proposes in-context prompt tuning (ICPT). Specifically, ICPT employs a lightweight projection module capable of operating in complex scenarios to extract fine-grained visual semantics from multiple reference images, seamlessly transforming these features alongside identity-label mappings into continuous prompts. To maximize computational efficiency, this module adaptively determines the prompt length based on the intrinsic visual complexity of each concept. Crucially, to overcome the environmental biases and cross-concept interference prevalent in real-world applications, we introduce two novel geometric regularizations. These constraints refine prompt representations by decoupling key identities from transient environmental states and separating concepts to avoid semantic confusion. Extensive experiments show that ICPT achieves state-of-the-art personalization accuracy across diverse tasks and LVLM backbones.",
+      "authors": [
+        "Yanshu Li",
+        "Jiaqian Li",
+        "Kuai Yu",
+        "Xi Xiao",
+        "Dongfang Liu",
+        "Tianyang Wang",
+        "Ruixiang Tang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-29T16:31:25+00:00",
+      "link": "https://arxiv.org/pdf/2605.31513v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Proposes in-context prompt tuning for personalizing vision-language models",
+      "llm_evidence_cn": "提出用于个性化视觉语言模型的上下文提示调优方法",
+      "llm_evidence": "提出用于个性化视觉语言模型的上下文提示调优方法",
+      "canonical_evidence": "提出用于个性化视觉语言模型的上下文提示调优方法",
+      "llm_tldr_en": "Introduces ICPT, an in-context prompt tuning method using a lightweight projection to adapt LVLMs to user-specific concepts without inference-time training, achieving efficient personalization in complex multi-image settings.",
+      "llm_tldr_cn": "针对大视觉语言模型个性化任务，本文提出上下文提示调优（ICPT），利用轻量级投影模块在复杂多图场景下快速适应新概念，避免了推理时训练的低效问题。实验表明ICPT在多概念个性化基准上优于现有方法，为高效部署个性化AI提供了新途径。",
+      "llm_tldr": "针对大视觉语言模型个性化任务，本文提出上下文提示调优（ICPT），利用轻量级投影模块在复杂多图场景下快速适应新概念，避免了推理时训练的低效问题。实验表明ICPT在多概念个性化基准上优于现有方法，为高效部署个性化AI提供了新途径。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "methods for fine-tuning prompts on downstream tasks",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.00467v1",
+      "source": "arxiv",
+      "title": "On the Limits of LLM Adaptability: Impact of Model-Internalized Priors on Annotation Task Performance",
+      "abstract": "Large Language Models (LLMs) are increasingly used for zero-shot annotation and LLM-as-a-judge tasks, yet their reliability hinges on how model-internalized priors interact with user-provided instructions. We investigate three dimensions of this interaction: (1) how an LLM's familiarity with data and task definitions affects performance, (2) the extent to which additional information in prompts can correct zero-shot errors (\"decision stickiness\"), and (3) model susceptibility to misaligned task definitions. Through experiments on toxicity detection across diverse datasets (spanning social media, gaming, news, and forums) using both dense and mixture-of-experts models, we find that nearly two-thirds of zero-shot errors are resistant to correction, with an overall rescue rate (fraction of initial errors corrected by prompting) of only 34.8%. High-confidence errors prove especially resistant to correction. When given misaligned definitions, LLMs follow them while maintaining confidence levels unchanged from the aligned condition. Crucially, we introduce Definition-Specific Familiarity (DSF), which measures alignment between a model's internal concept and the task definition. After controlling for dataset-level confounds, DSF shows a positive association with model performance (partial r = +0.41), while three distinct memorization metrics (ROUGE-L, BERTScore, and embedding cosine similarity) all fail to show a positive association. These findings show the limitations of prompt-based correction in annotation tasks, highlighting the importance of definition alignment over text-level memorization.",
+      "authors": [
+        "Etienne Casanova",
+        "Rafal Kocielnik",
+        "R. Michael Alvarez"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "published": "2026-05-30T01:21:14+00:00",
+      "link": "https://arxiv.org/pdf/2606.00467v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Studies how prompt design and additional information can counteract model priors, providing insights for effective instruction design.",
+      "llm_evidence_cn": "研究提示设计如何对抗模型先验，为有效指令设计提供见解",
+      "llm_evidence": "研究提示设计如何对抗模型先验，为有效指令设计提供见解",
+      "canonical_evidence": "研究提示设计如何对抗模型先验，为有效指令设计提供见解",
+      "llm_tldr_en": "Investigates the interplay between model-internalized priors and prompts in zero-shot annotation, revealing how additional prompt information can or cannot correct errors, offering guidelines for designing prompts to improve LLM adaptability.",
+      "llm_tldr_cn": "探讨大语言模型在零样本标注中内部先验与提示的交互，发现近三分之二的错误可通过提示中的额外信息修正，但修正程度有限，并揭示了模型对不一致任务定义的敏感性，为设计有效提示以提高适应性提供了实证依据。",
+      "llm_tldr": "探讨大语言模型在零样本标注中内部先验与提示的交互，发现近三分之二的错误可通过提示中的额外信息修正，但修正程度有限，并揭示了模型对不一致任务定义的敏感性，为设计有效提示以提高适应性提供了实证依据。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "best practices for designing effective prompts",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.00822v1",
+      "source": "arxiv",
+      "title": "SkillPager: Query-Adaptive Intra-Skill Navigation via Semantic Node Retrieval",
+      "abstract": "Skill-based LLM agents increasingly rely on long procedural documents, but full-document prompting wastes tokens and dilutes information critical to execution. We study this setting as intra-skill retrieval, where the goal is to select a minimal, execution-sufficient context from a known skill document given a query. We present SkillPager, a two-stage framework that parses each Markdown skill into typed semantic nodes offline and leverages Maximal Marginal Relevance (MMR) to perform global, query-conditioned node selection online. On a benchmark of 395 skills and 1,975 queries, SkillPager achieves 78.89% LLM-judged context sufficiency, compared to 82.23% for the exhaustive full-document baseline, while reducing prompt tokens by 47.04%. A granularity ablation shows that applying the same retrieval algorithm to raw fixed-length chunks reaches a comparable 81.77% sufficiency but increases token cost by 28.81%, demonstrating that efficiency gains are driven by typed semantic granularity rather than the retrieval algorithm alone. Among graph-based baselines, SkillPager outperforms the strongest baseline by a margin of 12.16%. Further ablations show that supporting content is most effective when retained in the candidate pool and selected adaptively rather than removed by static heuristics. These results identify typed intra-document retrieval as a distinct access problem for skill-based agents.",
+      "authors": [
+        "Zicai Cui",
+        "Zihan Guo",
+        "Weiwen Liu",
+        "Weinan Zhang"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "published": "2026-05-30T17:49:07+00:00",
+      "link": "https://arxiv.org/pdf/2606.00822v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "selects minimal, execution-sufficient context from skill documents to optimize agent prompts, reducing token usage by 47% while maintaining performance",
+      "llm_evidence_cn": "从技能文档中选择最小但执行充分的上下文以优化代理提示词，在保持性能的同时减少47%的令牌使用量",
+      "llm_evidence": "从技能文档中选择最小但执行充分的上下文以优化代理提示词，在保持性能的同时减少47%的令牌使用量",
+      "canonical_evidence": "从技能文档中选择最小但执行充分的上下文以优化代理提示词，在保持性能的同时减少47%的令牌使用量",
+      "llm_tldr_en": "SkillPager addresses the problem of excessive token usage in skill-based LLM agents by parsing skill documents into semantic nodes and using Maximal Marginal Relevance to select query-adaptive, minimal context, achieving 47% token reduction with minimal performance loss.",
+      "llm_tldr_cn": "SkillPager 针对基于技能的大语言模型代理因完整文档提示词导致的令牌浪费和信息稀释问题，提出了一种两阶段框架。离线阶段将Markdown技能文档解析为类型化语义节点，在线阶段利用最大边际相关性（MMR）进行全局查询条件节点选择，从而获得最小但执行充分的上下文。在包含395个技能和1975个查询的基准测试中，SkillPager在实现78.89%的上下文充分性（相对于82.23%的全文档基线）的情况下，将提示词令牌减少47.04%。该方法显著降低了代理任务的上下文成本，为优化提示词构造提供了有效方案。",
+      "llm_tldr": "SkillPager 针对基于技能的大语言模型代理因完整文档提示词导致的令牌浪费和信息稀释问题，提出了一种两阶段框架。离线阶段将Markdown技能文档解析为类型化语义节点，在线阶段利用最大边际相关性（MMR）进行全局查询条件节点选择，从而获得最小但执行充分的上下文。在包含395个技能和1975个查询的基准测试中，SkillPager在实现78.89%的上下文充分性（相对于82.23%的全文档基线）的情况下，将提示词令牌减少47.04%。该方法显著降低了代理任务的上下文成本，为优化提示词构造提供了有效方案。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.00919v1",
+      "source": "arxiv",
+      "title": "Towards Lightweight Reliability: Using Soft Prompts for Hallucination Mitigation in Large Language Models",
+      "abstract": "Large language models (LLMs) have seen widespread adoption across various domains, yet their reliability is frequently undermined by hallucinations - responses that are plausible-sounding but factually incorrect. In high-stakes domains, these errors can reduce trust and introduce real-world risk. To address this challenge, we present a parameter-efficient approach that uses soft prompts to mitigate hallucinated content and promote responsible abstention in generative question-answering (QA) tasks.   Our method, called Responsible Contrastive Soft Prompting (RCSP), uses a composite loss to train soft prompts that balance three goals: suppressing hallucinatory content, encouraging abstention under uncertainty, and preserving or improving factual recall. To achieve these goals, we incorporate contrastive loss, curriculum learning, and KL regularization into our training mechanism. We evaluate our approach on five diverse generative QA datasets using an LLM-as-a-Judge framework. Experimental results on the Gemma 3 (12B) and Llama 3.1 (8B) backbones demonstrate that RCSP effectively balances factual recall with hallucination suppression and abstention, yielding a generally superior F-score over standard reasoning and instruction-based prompting baselines. Notably, these improvements are achieved by training only a fraction of the parameters required by other tuning techniques. Our results demonstrate that soft prompts provide a modular and computationally efficient path toward improving LLM reliability.",
+      "authors": [
+        "S M Tahmid Siddiqui",
+        "Akib Jawad Ononto",
+        "Anoop Singhal",
+        "Latifur Khan"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-05-30T23:02:33+00:00",
+      "link": "https://arxiv.org/pdf/2606.00919v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Trains soft prompts with composite loss to mitigate hallucinations in QA, a parameter-efficient prompt fine-tuning method.",
+      "llm_evidence_cn": "使用复合损失训练软提示以缓解QA中的幻觉，一种参数高效的提示微调方法。",
+      "llm_evidence": "使用复合损失训练软提示以缓解QA中的幻觉，一种参数高效的提示微调方法。",
+      "canonical_evidence": "使用复合损失训练软提示以缓解QA中的幻觉，一种参数高效的提示微调方法。",
+      "llm_tldr_en": "Proposes RCSP, a soft prompt fine-tuning method that balances hallucination suppression, responsible abstention, and helpfulness preservation, effectively reducing hallucinations in generative QA with minimal parameter updates.",
+      "llm_tldr_cn": "大模型在生成式问答中易产生事实性幻觉，降低信任度。本文提出RCSP（负责任的对比软提示），通过复合损失训练连续的软提示向量，同时抑制幻觉内容、鼓励不确定性下的弃权并保持回答有用性，实现参数高效微调。相比全量微调，RCSP仅更新极少量参数，在多个QA基准上有效降低幻觉率，提升可靠性，为轻量级幻觉缓解提供了一条可行路径。",
+      "llm_tldr": "大模型在生成式问答中易产生事实性幻觉，降低信任度。本文提出RCSP（负责任的对比软提示），通过复合损失训练连续的软提示向量，同时抑制幻觉内容、鼓励不确定性下的弃权并保持回答有用性，实现参数高效微调。相比全量微调，RCSP仅更新极少量参数，在多个QA基准上有效降低幻觉率，提升可靠性，为轻量级幻觉缓解提供了一条可行路径。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "methods for fine-tuning prompts on downstream tasks",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.03304v1",
+      "source": "arxiv",
+      "title": "From Script to Semantics: Prompting Strategies for African NLI",
+      "abstract": "Large language models (LLMs) are increasingly evaluated in multilingual settings, yet their inference behavior in low-resource African languages remains underexplored especially under pure prompting without fine-tuning. We present a systematic study of prompting strategies for Natural Language Inference (NLI) in Swahili, Yoruba, and Hausa using the AfriXNLI benchmark. We evaluate five prompting strategies Baseline (zero-shot), Script-Aware, Language Specific, Contrastive, and Native-Label Self-Translation (NL-STP) across two mid-sized open weight models (Llama3.2-3B and Gemma3-4B). To isolate the effect of prompt design, the effect of few-shot examples and Chain-of-Thought reasoning is eliminated in our study. We find a significant difference in performance of class wise across strategies with highly neutral class collapse and high prediction skew in some configurations. Contrastive prompting proves to be the most reliable and steadily improving strategy over language and model and has better balance of class behavior and balance of overall accuracy gains. Notably, well-constructed prompts are sufficient to beat more powerful baselines that are provided with few-shot prompts and Chain-of-Thought prompts. We have found that prompt formulation is essential to multilingual NLI with low-resource languages and that language aware decision structuring can be used to meaningfully enhance robustness in resource challenged settings.",
+      "authors": [
+        "Anuj Tiwari",
+        "Terry Oko-odion",
+        "Hannah Nwokocha"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-06-02T08:20:10+00:00",
+      "link": "https://arxiv.org/pdf/2606.03304v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Systematically evaluates five prompting strategies for NLI in African languages, isolating prompt design effects.",
+      "llm_evidence_cn": "系统评估五种非洲语言NLI提示策略，隔离提示设计影响。",
+      "llm_evidence": "系统评估五种非洲语言NLI提示策略，隔离提示设计影响。",
+      "canonical_evidence": "系统评估五种非洲语言NLI提示策略，隔离提示设计影响。",
+      "llm_tldr_en": "Studies how different prompting strategies affect Natural Language Inference in Swahili, Yoruba, and Hausa, finding that script-aware and contrastive prompts significantly boost performance, highlighting the importance of prompt design for low-resource languages.",
+      "llm_tldr_cn": "针对非洲低资源语言的纯提示推理研究不足，本文系统评估了五种提示策略在斯瓦希里语、约鲁巴语和哈蒙语上的自然语言推理性能。通过隔离少样本和思维链影响，发现脚本感知和对比提示能显著提升性能，表明提示设计对低资源语言模型表现至关重要。该研究为多语言提示策略最佳实践提供了实证依据。",
+      "llm_tldr": "针对非洲低资源语言的纯提示推理研究不足，本文系统评估了五种提示策略在斯瓦希里语、约鲁巴语和哈蒙语上的自然语言推理性能。通过隔离少样本和思维链影响，发现脚本感知和对比提示能显著提升性能，表明提示设计对低资源语言模型表现至关重要。该研究为多语言提示策略最佳实践提供了实证依据。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "best practices for designing effective prompts",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.03618v1",
+      "source": "arxiv",
+      "title": "Cross-Lingual Token Arbitrage: Optimizing Code Agent Context Windows via Local LLM Preprocessing",
+      "abstract": "AI-assisted coding agents are bottlenecked by input-token cost. Two pathologies of raw human input drive much of this overhead: tokenization inefficiency for non-English text and structural entropy in conversational prompts. Existing approaches act reactively by compressing already-bloated contexts or intervening after failures occur.   We introduce a pre-flight, edge-side prompt-rewriting middleware that operates between the developer and the cloud agent. A local Llama 3.2 (3B) model performs cross-lingual translation into English, structural rewriting into a compact task-oriented format, and regex-validated rewrite-with-fallback safeguards to ensure the optimized prompt is never larger than the original.   We evaluate on OMH-Polyglot, a multilingual coding benchmark spanning Turkish, Arabic, Chinese, and code-switched specifications. Across three commercial LLM backends, the middleware reduces prompt tokens by 34-47 percent and total tokens by up to 18.8 percent while preserving or improving task accuracy. Ablation studies show that gains arise primarily from the rewriting stage rather than simple function-name extraction. Compared with LLMLingua-2 at matched compression rates, our method consistently achieves superior OckScore performance across all evaluated backends. These results demonstrate that proactive prompt optimization can substantially reduce inference costs without sacrificing coding quality.",
+      "authors": [
+        "Mehmet Utku Colak"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-02T13:17:45+00:00",
+      "link": "https://arxiv.org/pdf/2606.03618v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "local LLM rewrites non-English and verbose prompts into compact format, reducing token cost for code agents",
+      "llm_evidence_cn": "本地LLM将非英语和冗长提示词重写为紧凑格式，降低代码代理的令牌成本",
+      "llm_evidence": "本地LLM将非英语和冗长提示词重写为紧凑格式，降低代码代理的令牌成本",
+      "canonical_evidence": "本地LLM将非英语和冗长提示词重写为紧凑格式，降低代码代理的令牌成本",
+      "llm_tldr_en": "This paper introduces a pre-flight prompt-rewriting middleware that uses a local LLM to translate and restructure prompts, optimizing token usage for code agents while preserving functionality.",
+      "llm_tldr_cn": "该论文针对AI辅助代码代理因非英语文本分词效率低和对话提示词结构熵高而面临的输入令牌成本问题，提出了一种在开发者与云代理之间运行的边侧提示词重写中间件。该方法利用本地Llama 3.2 (3B)模型进行跨语言翻译、结构重写和正则验证，确保优化后的提示词不大于原始版本。在OMH基准上评估，有效降低了令牌用量，为代码代理的提示词优化提供了一种轻量级预处理方案。",
+      "llm_tldr": "该论文针对AI辅助代码代理因非英语文本分词效率低和对话提示词结构熵高而面临的输入令牌成本问题，提出了一种在开发者与云代理之间运行的边侧提示词重写中间件。该方法利用本地Llama 3.2 (3B)模型进行跨语言翻译、结构重写和正则验证，确保优化后的提示词不大于原始版本。在OMH基准上评估，有效降低了令牌用量，为代码代理的提示词优化提供了一种轻量级预处理方案。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.29027v1",
+      "source": "arxiv",
+      "title": "Mind Your Tone: Does Tone Alter LLM Performance?",
+      "abstract": "The use of Large Language Models (LLMs) is proliferating, yet their performance is observed to vary based on prompting styles and tones. In this study, we investigate both whether and how tonal variations in prompts lead to disparate LLM accuracy for objective multiple-choice questions. We use two datasets: a 50-base question dataset with five tone variants and a 570-base question MMLU subset spanning 57 subjects with seven tone variants. Experiments were conducted to evaluate the performance of four cost-efficient, popular LLMs: ChatGPT-4o, ChatGPT-5-nano, Gemini 2.5 Flash, and Gemini 2.5 Flash Lite. Across models, tonal effects are systematic but highly model-dependent. Some models show small, yet statistically significant, shifts, while others exhibit large accuracy swings across tones. Further, we identify subject-level differences in tone sensitivity and present a routing framework to explain how tones may attune internal reasoning modes. Our findings caution users against assuming tone-robust reliability in LLM deployments.",
+      "authors": [
+        "Om Dobariya",
+        "Akhil Kumar"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.HC"
+      ],
+      "published": "2026-05-27T19:23:46+00:00",
+      "link": "https://arxiv.org/pdf/2605.29027v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Studies how tonal variations in prompts affect LLM performance, contributing to best practices for effective prompt design.",
+      "llm_evidence_cn": "研究提示语气变化对LLM性能的影响，为有效提示设计提供最佳实践。",
+      "llm_evidence": "研究提示语气变化对LLM性能的影响，为有效提示设计提供最佳实践。",
+      "canonical_evidence": "研究提示语气变化对LLM性能的影响，为有效提示设计提供最佳实践。",
+      "llm_tldr_en": "Investigates whether tonal variations in prompts lead to disparate LLM accuracy, finding systematic but model-dependent effects, offering best practices for prompt phrasing.",
+      "llm_tldr_cn": "针对大语言模型对提示风格的敏感性，本文系统研究了语气变化对模型准确率的影响。通过在50道基础题和570道MMLU子集上构建多种语气变体，并测试了ChatGPT-4o等四个模型，发现语气对性能有显著但模型依赖的效应。研究揭示了提示措辞的重要性，为设计有效提示提供了实用指导，有助于建立提示优化中的语气选择原则。",
+      "llm_tldr": "针对大语言模型对提示风格的敏感性，本文系统研究了语气变化对模型准确率的影响。通过在50道基础题和570道MMLU子集上构建多种语气变体，并测试了ChatGPT-4o等四个模型，发现语气对性能有显著但模型依赖的效应。研究揭示了提示措辞的重要性，为设计有效提示提供了实用指导，有助于建立提示优化中的语气选择原则。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "best practices for designing effective prompts",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}
