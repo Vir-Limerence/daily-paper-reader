@@ -1,0 +1,1136 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-04T07:05:06.908446+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 26,
+    "deep_cap": 6,
+    "deep_selected": 23,
+    "quick_candidates": 6,
+    "quick_skim_target": 11,
+    "quick_selected": 6
+  },
+  "deep_dive": [
+    {
+      "id": "2605.06623v1",
+      "source": "arxiv",
+      "title": "MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems",
+      "abstract": "Large language model (LLM)-based Multi-agent systems (MAS) have shown promise in tackling complex collaborative tasks, where agents are typically orchestrated via role-specific prompts. While the quality of these prompts is pivotal, jointly optimizing them across interacting agents remains a non-trivial challenge, primarily due to the misalignment between local agent objectives and holistic system goals. To address this, we introduce MASPO, a novel framework designed to automatically and iteratively refine prompts across the entire system. A core innovation of MASPO is its joint evaluation mechanism, which assesses prompts not merely by their local validity, but by their capacity to facilitate downstream success for successor agents. This effectively bridges the gap between local interactions and global outcomes without relying on ground-truth labels. Furthermore, MASPO employs a data-driven evolutionary beam search to efficiently navigate the high-dimensional prompt space. Extensive empirical evaluations across 6 diverse tasks demonstrate that MASPO consistently outperforms state-of-the-art prompt optimization methods, achieving an average accuracy improvement of 2.9. We release our code at https://github.com/wangzx1219/MASPO.",
+      "authors": [
+        "Zhexuan Wang",
+        "Xuebo Liu",
+        "Li Wang",
+        "Zifei Shan",
+        "Yutong Wang",
+        "Zhenxi Song",
+        "Min Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-05-07T17:35:26+00:00",
+      "link": "https://arxiv.org/pdf/2605.06623v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "joint prompt optimization for multi-agent systems via iterative refinement",
+      "llm_evidence_cn": "多代理系统的联合提示优化，通过迭代精炼",
+      "llm_evidence": "多代理系统的联合提示优化，通过迭代精炼",
+      "canonical_evidence": "多代理系统的联合提示优化，通过迭代精炼",
+      "llm_tldr_en": "MASPO jointly optimizes role-specific prompts in multi-agent LLM systems by iteratively evaluating and refining prompts based on their downstream success, aligning local and global objectives.",
+      "llm_tldr_cn": "大语言模型多代理系统中，单独优化角色提示会导致局部目标与系统级目标错位。本文提出MASPO框架，通过评估提示促进后续代理成功的能力来联合迭代优化所有提示，克服了对齐难题。实验表明该方法能自动提升多代理系统的协作表现，为复杂系统中的提示自动优化开辟了新路径。",
+      "llm_tldr": "大语言模型多代理系统中，单独优化角色提示会导致局部目标与系统级目标错位。本文提出MASPO框架，通过评估提示促进后续代理成功的能力来联合迭代优化所有提示，克服了对齐难题。实验表明该方法能自动提升多代理系统的协作表现，为复杂系统中的提示自动优化开辟了新路径。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.14553v1",
+      "source": "arxiv",
+      "title": "Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits",
+      "abstract": "Prompt engineering has become central to eliciting the capabilities of large language models (LLMs). At its core lies prompt selection -- efficiently identifying the most effective prompts. However, most prior investigations overlook a key challenge: the inherently multi-faceted nature of prompt performance, which cannot be captured by a single metric. To fill this gap, we study the multi-objective prompt selection problem under two practical settings: Pareto prompt set recovery and best feasible prompt identification. Casting the problem into the pure-exploration bandits framework, we adapt provably efficient algorithms from multi-objective bandits and further introduce a novel design for best feasible arm identification in structured bandits, with theoretical guarantees on the identification error in the linear case. Extensive experiments across multiple LLMs show that the bandit-based approaches yield significant improvements over baselines, establishing a principled and efficient framework for multi-objective prompt optimization.",
+      "authors": [
+        "Donghao Li",
+        "Chengshuai Shi",
+        "Weijuan Ou",
+        "Cong Shen",
+        "Jing Yang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-14T08:31:17+00:00",
+      "link": "https://arxiv.org/pdf/2605.14553v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "multi-objective prompt optimization via pure-exploration bandits",
+      "llm_evidence_cn": "基于纯探索老虎机的多目标提示优化",
+      "llm_evidence": "基于纯探索老虎机的多目标提示优化",
+      "canonical_evidence": "基于纯探索老虎机的多目标提示优化",
+      "llm_tldr_en": "Formulates multi-objective prompt selection as pure-exploration bandits, enabling efficient identification of Pareto-optimal or best feasible prompts for LLMs.",
+      "llm_tldr_cn": "针对提示性能的多目标特性，本文将该问题形式化为纯探索老虎机，引入多目标老虎机的高效算法并设计结构化老虎机新方法，在帕累托集恢复和最佳可行提示识别任务中实现高效优化。与单目标搜索相比，它能发现兼顾多种性能指标的提示集合，为多目标自动提示搜索提供了坚实的理论和方法支撑。",
+      "llm_tldr": "针对提示性能的多目标特性，本文将该问题形式化为纯探索老虎机，引入多目标老虎机的高效算法并设计结构化老虎机新方法，在帕累托集恢复和最佳可行提示识别任务中实现高效优化。与单目标搜索相比，它能发现兼顾多种性能指标的提示集合，为多目标自动提示搜索提供了坚实的理论和方法支撑。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.19093v1",
+      "source": "arxiv",
+      "title": "Embedding by Elicitation: Dynamic Representations for Bayesian Optimization of System Prompts",
+      "abstract": "System prompts are a central control mechanism in modern AI systems, shaping behavior across conversations, tasks, and user populations. Yet they are difficult to tune when feedback is available only as aggregate metrics rather than per-example labels, failures, or critiques. We study this aggregate feedback setting as sample-constrained black-box optimization over discrete, variable-length text. We introduce ReElicit, a Bayesian optimization framework based on \\emph{embedding by elicitation}. Given a task description, previously evaluated prompts, and scalar scores, an LLM elicits a compact, interpretable feature space and maps prompts into it. Leveraging a probabilistic Gaussian process surrogate, an acquisition function then selects target feature vectors, which the LLM realizes and refines into deployable system prompts. Re-eliciting the feature space as new evaluations arrive lets the representation adapt to the observed prompt-score history. We evaluate the setting using offline benchmark accuracy as a controlled aggregate proxy: the optimizer observes one scalar score per prompt and no per-example labels, errors, or critiques. Across ten system prompt optimization tasks with a 30 total evaluation budget, ReElicit achieves the strongest aggregate performance profile among representative aggregate-only prompt-optimization baselines. These results suggest that LLMs can serve as adaptive semantic representation builders, not only prompt generators, for Bayesian optimization over natural-language artifacts.",
+      "authors": [
+        "Zhiyuan Jerry Lin",
+        "Benjamin Letham",
+        "Samuel Dooley",
+        "Maximilian Balandat",
+        "Eytan Bakshy"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-18T20:28:17+00:00",
+      "link": "https://arxiv.org/pdf/2605.19093v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Bayesian optimization of system prompts with LLM-elicited feature space",
+      "llm_evidence_cn": "基于LLM引出特征空间的系统提示贝叶斯优化",
+      "llm_evidence": "基于LLM引出特征空间的系统提示贝叶斯优化",
+      "canonical_evidence": "基于LLM引出特征空间的系统提示贝叶斯优化",
+      "llm_tldr_en": "Presents ReElicit, a Bayesian optimization framework that uses LLM-elicited feature embeddings to efficiently tune system prompts from aggregate feedback, enabling sample-efficient prompt optimization.",
+      "llm_tldr_cn": "系统提示优化在聚合反馈下样本受限。本文提出ReElicit，利用LLM引出特征空间并进行贝叶斯优化，在离散文本空间高效搜索最优系统提示。实验证明微量样本即可发现高质量提示，为聚合反馈场景的自动提示优化提供了新范式。",
+      "llm_tldr": "系统提示优化在聚合反馈下样本受限。本文提出ReElicit，利用LLM引出特征空间并进行贝叶斯优化，在离散文本空间高效搜索最优系统提示。实验证明微量样本即可发现高质量提示，为聚合反馈场景的自动提示优化提供了新范式。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.19102v1",
+      "source": "arxiv",
+      "title": "Prompt Optimization for LLM Code Generation via Reinforcement Learning",
+      "abstract": "Large Language Models (LLMs) can generate code from natural language, but their performance is highly sensitive to prompt formulation. We propose a reinforcement-learning-based framework that models prompt refinement as a sequential decision-making problem. A Proximal Policy Optimization (PPO) agent iteratively improves prompts using a hybrid action space that combines direct generation, genetic lexical mutation and semantic rewriting, guided by shaped rewards derived from unit-test feedback. We evaluate the framework on MBPP+, HumanEval+, and APPS using CodeT5+, CodeLLaMA, and DeepSeek-Coder as frozen code generators. On the 500-task MBPP+ test set, the PPO agent achieves strict Pass@1 scores of 57.58%, 64.80%, and 85.50%, respectively, outperforming EPiC, Reflexion, and Random-Hybrid. Soft-Pass@1 reaches 67.90%, 73.10%, and 88.20%, respectively. Similar improvements are observed on HumanEval+ and APPS across all backbone models. The results demonstrate that reinforcement learning with shaped test-driven rewards improves functional correctness in LLM-based code generation.",
+      "authors": [
+        "Ali Mohammadi Esfahani",
+        "Nafiseh Kahani",
+        "Samuel A. Ajila"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-05-18T20:42:23+00:00",
+      "link": "https://arxiv.org/pdf/2605.19102v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "uses PPO agent to iteratively improve prompts with hybrid action space",
+      "llm_evidence_cn": "使用PPO智能体通过混合动作空间迭代优化提示",
+      "llm_evidence": "使用PPO智能体通过混合动作空间迭代优化提示",
+      "canonical_evidence": "使用PPO智能体通过混合动作空间迭代优化提示",
+      "llm_tldr_en": "Proposes an RL-based framework for code generation prompt optimization, where a PPO agent refines prompts via generation, mutation, and rewriting, guided by unit-test rewards, significantly boosting Pass@1 scores.",
+      "llm_tldr_cn": "针对代码生成中提示高度敏感的问题，提出基于强化学习的提示优化框架，通过PPO智能体结合生成、变异和重写的混合动作空间，以单元测试奖励引导迭代改进，在MBPP+等基准上大幅提升Pass@1，验证了自动化搜索在代码任务中的有效性。",
+      "llm_tldr": "针对代码生成中提示高度敏感的问题，提出基于强化学习的提示优化框架，通过PPO智能体结合生成、变异和重写的混合动作空间，以单元测试奖励引导迭代改进，在MBPP+等基准上大幅提升Pass@1，验证了自动化搜索在代码任务中的有效性。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.20149v1",
+      "source": "arxiv",
+      "title": "Less Back-and-Forth: A Comparative Study of Structured Prompting",
+      "abstract": "Large language models (LLMs) are widely used for open-ended tasks, but underspecified prompts can lead to low-quality answers and additional interaction. This paper studies whether structured prompt design improves response quality while reducing user effort. We compare three prompt conditions: a raw prompt, a checklist-improved prompt, and a clarifying-question prompt. We evaluate these conditions across four task types--summarization, planning, explanation, and coding--using three LLM systems: ChatGPT, Claude, and Grok. Each output is scored with a unified rubric covering task completion, correctness, compliance, and clarity. Checklist-improved prompts achieved the highest mean rubric score, 7.50 out of 8, compared with 5.67 for raw prompts and 6.67 for clarifying-question prompts. Checklist prompts also produced the best quality-effort tradeoff, using fewer average tokens than both raw and clarifying prompts. These results suggest that a simple prompt checklist can improve LLM responses while reducing unnecessary interaction.",
+      "authors": [
+        "Saurav Ghosh",
+        "Gabriella Polach",
+        "Abdou Sow"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "published": "2026-05-19T17:40:14+00:00",
+      "link": "https://arxiv.org/pdf/2605.20149v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "evaluates structured prompt design: checklist prompts outperform raw and clarifying prompts",
+      "llm_evidence_cn": "结构化提示设计评估：清单式提示优于原始和澄清式提示",
+      "llm_evidence": "结构化提示设计评估：清单式提示优于原始和澄清式提示",
+      "canonical_evidence": "结构化提示设计评估：清单式提示优于原始和澄清式提示",
+      "llm_tldr_en": "A comparative study shows that checklist-based structured prompts significantly improve response quality over raw or clarifying-question prompts across multiple tasks and LLMs, providing empirical evidence for effective prompt design.",
+      "llm_tldr_cn": "针对开放式任务中提示不明确导致低质量回答的问题，本研究比较了原始、清单增强和澄清提问三种提示设计，通过在摘要、规划、解释和编码任务上测试多个模型，发现清单增强提示平均评分最高（7.50/8），显著优于其他条件，表明结构化提示设计能有效提升回答质量和用户效率。",
+      "llm_tldr": "针对开放式任务中提示不明确导致低质量回答的问题，本研究比较了原始、清单增强和澄清提问三种提示设计，通过在摘要、规划、解释和编码任务上测试多个模型，发现清单增强提示平均评分最高（7.50/8），显著优于其他条件，表明结构化提示设计能有效提升回答质量和用户效率。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "best practices for designing effective prompts",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.20924v1",
+      "source": "arxiv",
+      "title": "Strategy-Induct: Task-Level Strategy Induction for Instruction Generation",
+      "abstract": "Designing effective task-level prompts is crucial for improving the performance of Large Language Models (LLMs). While prior work on instruction induction demonstrates that LLMs can infer better instructions with limited examples, existing approaches often rely on input-output pairs, where obtaining labeled answers can be difficult or costly. To address this limitation, we propose Strategy-Induct, a framework that derives task-level instructions solely from a small set of example questions without requiring labeled answers. Our approach first prompts the model to generate explicit reasoning strategies for each question, forming (strategy, question) pairs. These pairs are then used to induce a task instruction that guides reasoning. Experiments across multiple tasks and model scales demonstrate that Strategy-Induct outperforms state-of-the-art methods in question-only settings. Furthermore, we observe that jointly utilizing LLMs and Large Reasoning Models across task instruction generation and inference may lead to further performance improvements.",
+      "authors": [
+        "Po-Chun Chen",
+        "Hen-Hsen Huang",
+        "Hsin-Hsi Chen"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-20T09:10:43+00:00",
+      "link": "https://arxiv.org/pdf/2605.20924v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "induces task-level instructions from example questions without labels",
+      "llm_evidence_cn": "从示例问题中无标签地诱导任务级指令",
+      "llm_evidence": "从示例问题中无标签地诱导任务级指令",
+      "canonical_evidence": "从示例问题中无标签地诱导任务级指令",
+      "llm_tldr_en": "Strategy-Induct generates effective task-level prompts without labeled answers by first inferring reasoning strategies from few-shot questions, then inducing an instruction, matching supervised methods.",
+      "llm_tldr_cn": "针对现有指令归纳依赖标注答案的问题，提出Strategy-Induct框架，仅从少量示例问题出发，通过推理策略生成和指令归纳，在无标签条件下自动生成高质量任务提示，性能接近有监督指令，降低了提示设计成本。",
+      "llm_tldr": "针对现有指令归纳依赖标注答案的问题，提出Strategy-Induct框架，仅从少量示例问题出发，通过推理策略生成和指令归纳，在无标签条件下自动生成高质量任务提示，性能接近有监督指令，降低了提示设计成本。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.26046v1",
+      "source": "arxiv",
+      "title": "When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges",
+      "abstract": "Customizing an LLM judge to a specific task or domain often involves optimizing its prompt across multiple evaluation criteria simultaneously. Textual gradient methods automate this for a single judge criterion, however they produce natural-language critiques, not numerical vectors. Thus, the conflict-resolution toolkit of multi-task learning (PCGrad, MGDA) doesn't apply to the multi-objective textual gradient setting. We test five decomposition modes of textual gradient optimizers by varying how much cross-task information the loss, gradient and optimizer LLMs share. In 6 of 10 configurations, we observe that optimization never improves over the initial prompt. Gradient specificity drops by 59% (from 9.0 to 3.7) when the gradient LLM processes multiple criteria jointly. Separately, we observe that naively combining per-task instructions into a single prompt degrades Spearman's rho by -5.3%. These results identify two separable failure modes: optimization-time gradient dilution and inference-time instruction interference, which together constrain the design space for multi-objective judge customization using textual feedback.",
+      "authors": [
+        "Parth Darshan",
+        "Abhishek Divekar"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "published": "2026-05-25T17:08:55+00:00",
+      "link": "https://arxiv.org/pdf/2605.26046v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "studies multi-objective prompt optimization via textual gradients, revealing failure modes",
+      "llm_evidence_cn": "研究文本梯度多目标提示优化的失败模式",
+      "llm_evidence": "研究文本梯度多目标提示优化的失败模式",
+      "canonical_evidence": "研究文本梯度多目标提示优化的失败模式",
+      "llm_tldr_en": "Investigates multi-objective prompt optimization using textual gradient methods for LLM judges, finding that gradient collisions often cause optimization to stall, with gradient specificity dropping significantly, highlighting challenges in aligning prompt improvements across criteria.",
+      "llm_tldr_cn": "针对LLM评价器多目标提示优化场景，探索文本梯度方法的表现，发现多数配置下优化未改进初始提示，且梯度特异性因跨任务信息而下降59%，揭示了多目标优化中梯度冲突的失败模式，为鲁棒的自动提示优化提供了关键认识。",
+      "llm_tldr": "针对LLM评价器多目标提示优化场景，探索文本梯度方法的表现，发现多数配置下优化未改进初始提示，且梯度特异性因跨任务信息而下降59%，揭示了多目标优化中梯度冲突的失败模式，为鲁棒的自动提示优化提供了关键认识。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.26275v1",
+      "source": "arxiv",
+      "title": "SPEAR: Code-Augmented Agentic Prompt Optimization",
+      "abstract": "Automatic prompt engineering (APE) rewrites prompts to improve downstream task performance, but existing APE loops treat the optimizer itself as a fixed pipeline. We port the code-as-action paradigm of CodeAct (Wang et al., 2024a) to APE and propose SPEAR (Sandboxed Prompt Engineer with Active Roll-back), a free-form agentic optimizer with four tools -- evaluate, python, set_prompt, finish -- that decides autonomously how and when to use them. The distinctive tool is the Python sandbox: the optimizer writes and executes arbitrary Python on the current evaluation DataFrame, performing structural error analysis (confusion matrices, error clustering, per group metrics) the agent itself authors. Two guardrails turn the long-horizon agent into a monotone-improving optimizer: auto-rollback on metric regression, and an optional guard metric floor. We evaluate on three industrial LLM-as-judge suites (13 judge tasks across recruiter-intake, conversational-memory, and query-refinement systems) plus seven BBH tasks and GSM8K. SPEAR wins every industrial task on the primary metric ($κ$ 0.857 vs 0.359 on tool-selection; F1-macro 0.815 vs 0.763 on filter-relevance; $κ$ 0.254 vs 0.218 on the hardest extraction dimension). On BBH-7 SPEAR averages 0.938 accuracy vs GEPA 0.628 and TextGrad 0.484. Ablations show the Python tool is the largest single lever on complex judge tasks ($Δ\\approx +0.79κ$ on the 5-class tool-selection judge, $Δ\\approx +0.35κ$ on the hardest extraction dimension when removed); its irreplaceable contribution is class-pair confusion aggregation that a long-context LLM cannot extract reliably from the raw eval DataFrame.",
+      "authors": [
+        "Mengyin Lu",
+        "Cong Feng",
+        "Huimin Han",
+        "Guangming Lu",
+        "Yu Sun",
+        "Xiaonan Ding",
+        "Shihui Long",
+        "Fengyi Li",
+        "Tanvi Motwani"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-25T19:01:10+00:00",
+      "link": "https://arxiv.org/pdf/2605.26275v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Proposes an agentic automatic prompt optimization system with Python sandbox for structured error analysis.",
+      "llm_evidence_cn": "提出带有Python沙箱的智能体式自动提示优化系统，用于结构化错误分析。",
+      "llm_evidence": "提出带有Python沙箱的智能体式自动提示优化系统，用于结构化错误分析。",
+      "canonical_evidence": "提出带有Python沙箱的智能体式自动提示优化系统，用于结构化错误分析。",
+      "llm_tldr_en": "SPEAR is an agentic optimizer that autonomously uses tools like Python sandbox to analyze errors and refine prompts, achieving monotonic improvements over multiple iterations.",
+      "llm_tldr_cn": "现有自动提示工程管线固化，SPEAR赋予优化器自由使用评估、Python分析等工具的能力，通过智能体主动进行错误聚类、分组度量，并添加单调改进护栏，实现长周期稳定优化，提升了提示优化自动化水平。",
+      "llm_tldr": "现有自动提示工程管线固化，SPEAR赋予优化器自由使用评估、Python分析等工具的能力，通过智能体主动进行错误聚类、分组度量，并添加单调改进护栏，实现长周期稳定优化，提升了提示优化自动化水平。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.10877v1",
+      "source": "arxiv",
+      "title": "Neural at ArchEHR-QA 2026: One Method Fits All: Unified Prompt Optimization for Clinical QA over EHRs",
+      "abstract": "Automated question answering (QA) over electronic health records (EHRs) demands precise evidence retrieval, faithful answer generation, and explicit grounding of answers in clinical notes. In this work, we present Neural1.5, our method for the ArchEHR-QA 2026 shared task at CL4Health@LREC 2026, which comprises four subtasks: question interpretation, evidence identification, answer generation, and evidence alignment. Our approach decouples the task into independent, modular stages and employs DSPy\"s MIPROv2 optimizer to automatically discover high-performing prompts, jointly tuning instructions and few-shot demonstrations for each stage. Within every stage, self-consistency voting over multiple stochastic inference runs suppresses spurious errors and improves reliability, while stage-specific verification mechanisms (e.g., self-reflection and chain-of-verification for alignment) further refine output quality. Among all teams that participated in all four subtasks, our method ranks second overall (mean rank 4.00), placing 4th, 1st, 4th, and 7th on Subtasks 1-4, respectively. These results demonstrate that systematic, per-stage prompt optimization combined with self-consistency mechanisms is a cost-effective alternative to model fine-tuning for multifaceted clinical QA.",
+      "authors": [
+        "Abrar Majeedi",
+        "Viswanatha Reddy Gajjala",
+        "Sai Prasanna Teja Reddy Bogireddy",
+        "Siddhant Rai"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-05-11T17:27:30+00:00",
+      "link": "https://arxiv.org/pdf/2605.10877v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "uses DSPy optimizer to automatically discover high-performing prompts for clinical QA subtasks",
+      "llm_evidence_cn": "利用DSPy优化器自动搜索临床问答子任务的高性能提示",
+      "llm_evidence": "利用DSPy优化器自动搜索临床问答子任务的高性能提示",
+      "canonical_evidence": "利用DSPy优化器自动搜索临床问答子任务的高性能提示",
+      "llm_tldr_en": "Neural1.5 applies DSPy's MIPROv2 to jointly tune instructions and few-shot demonstrations for each stage of clinical QA, achieving strong results via self-consistency voting.",
+      "llm_tldr_cn": "针对电子健康记录问答中证据检索、答案生成和对齐等子任务，本文提出Neural1.5方法，采用DSPy的MIPROv2优化器自动联合调优各阶段的指令和少样本示例。通过解耦模块化设计和自一致性投票，该方法在ArchEHR-QA 2026共享任务中取得了高性能。这项工作展示了自动化提示优化在专业领域问答中的巨大潜力，减少了对人工设计提示的依赖。",
+      "llm_tldr": "针对电子健康记录问答中证据检索、答案生成和对齐等子任务，本文提出Neural1.5方法，采用DSPy的MIPROv2优化器自动联合调优各阶段的指令和少样本示例。通过解耦模块化设计和自一致性投票，该方法在ArchEHR-QA 2026共享任务中取得了高性能。这项工作展示了自动化提示优化在专业领域问答中的巨大潜力，减少了对人工设计提示的依赖。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "How to optimize prompts for specific downstream tasks like question answering?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.14443v1",
+      "source": "arxiv",
+      "title": "Prompting Policies for Multi-step Reasoning and Tool-Use in Black-box LLMs with Iterative Distillation of Experience",
+      "abstract": "The shift toward interacting with frozen, \"black-box\" Large Language Models (LLMs) has transformed prompt engineering from a heuristic exercise into a critical optimization challenge. We propose a Reinforcement Learning (RL) framework for training learned prompting policies via iterative distillation of experience. In this architecture, a lightweight prompter model is optimized to maximize task-specific rewards for a larger, frozen worker LLM. By utilizing a contrastive experience buffer that couples scalar rewards with dense textual critiques, our approach effectively amortizes iterative prompt refinement into single-shot policy weights.   Our experimental analysis focuses on the Big Bench Extra Hard (BBEH) and Tau-bench suites, covering a diverse range of multi-step reasoning and tool-use tasks. We demonstrate significant gains, improving performance from 55% to 90% in logic-intensive reasoning and 74% to 91% in tool-use tasks. Furthermore, we analyze the structural evolution of prompts, demonstrating how the policy discovers specialized algorithmic heuristics. We provide comprehensive comparisons against state-of-the-art evolutionary baselines like GEPA, showing that iterative distillation achieves superior performance with higher sample efficiency.",
+      "authors": [
+        "Krishna Sayana",
+        "Ketan Todi",
+        "Ambarish Jash"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-05-14T06:38:19+00:00",
+      "link": "https://arxiv.org/pdf/2605.14443v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Proposes RL-based training of prompting policies for black-box LLMs via iterative distillation",
+      "llm_evidence_cn": "提出基于强化学习的提示策略训练，通过迭代蒸馏优化黑盒LLM提示",
+      "llm_evidence": "提出基于强化学习的提示策略训练，通过迭代蒸馏优化黑盒LLM提示",
+      "canonical_evidence": "提出基于强化学习的提示策略训练，通过迭代蒸馏优化黑盒LLM提示",
+      "llm_tldr_en": "The paper frames prompt engineering as an RL problem where a lightweight prompter model is trained to generate prompts for a frozen LLM, using a contrastive experience buffer to amortize iterative refinement. This enables efficient prompt optimization for multi-step reasoning tasks.",
+      "llm_tldr_cn": "针对大规模语言模型提示工程从启发式操作转为关键优化挑战，本文提出一种强化学习框架，通过经验迭代蒸馏训练提示策略。该方法利用轻量级提示模型为冻结大模型生成任务提示，并通过对比经验缓冲区耦合标量奖励与密集文本评价，将迭代提示精炼过程摊销为单步策略权重。实验在Big Bench Extra Hard等复杂推理任务上验证了有效性，为黑盒模型下的自动化提示优化提供了新范式。",
+      "llm_tldr": "针对大规模语言模型提示工程从启发式操作转为关键优化挑战，本文提出一种强化学习框架，通过经验迭代蒸馏训练提示策略。该方法利用轻量级提示模型为冻结大模型生成任务提示，并通过对比经验缓冲区耦合标量奖励与密集文本评价，将迭代提示精炼过程摊销为单步策略权重。实验在Big Bench Extra Hard等复杂推理任务上验证了有效性，为黑盒模型下的自动化提示优化提供了新范式。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "What are the latest techniques for automatic prompt optimization in large language models?",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.14561v1",
+      "source": "arxiv",
+      "title": "Prompt Segmentation and Annotation Optimisation: Controlling LLM Behaviour via Optimised Segment-Level Annotations",
+      "abstract": "Prompt engineering is crucial for effective interaction with generative artificial intelligence systems, yet existing optimisation methods often operate over an unstructured and vast prompt space, leading to high computational costs and potential distortions of the original intent. We introduce Prompt Segmentation and Annotation Optimisation (PSAO), a structured prompt optimisation framework designed to improve prompt optimisation controllability and efficiency. PSAO decomposes a prompt into interpretable segments (e.g., sentences) and augments each with human-readable annotations (e.g., {not important}, {important}, {very important}). These annotations guide large language models (LLMs) in allocating focus and clarifying confusion during response generation. We formally define the segmentations and annotations and demonstrate that optimised segment-level annotations can lead to improved LLM responses, with the original prompt retained as a candidate in the optimisation space to prevent performance degradation. Empirical evaluations indicate that PSAO benefits from annotations in terms of improved reasoning accuracy and self-consistency. However, developing efficient methods for identifying optimal segmentations and annotations remains challenging and is reserved for future investigation. This work is intended as a proof of concept, demonstrating the feasibility and potential of segment-level annotation optimisation.",
+      "authors": [
+        "Devika Prasad",
+        "Luke Gerschwitz",
+        "Tong Li",
+        "Henry Xiao",
+        "Anjin Liu",
+        "Coco Wu",
+        "Anna Leontjeva",
+        "Luiz Pizzato"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-14T08:33:47+00:00",
+      "link": "https://arxiv.org/pdf/2605.14561v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Introduces a structured prompt optimization framework that segments prompts and adds importance annotations.",
+      "llm_evidence_cn": "提出一种结构化提示优化框架，将提示分段并添加重要性标注。",
+      "llm_evidence": "提出一种结构化提示优化框架，将提示分段并添加重要性标注。",
+      "canonical_evidence": "提出一种结构化提示优化框架，将提示分段并添加重要性标注。",
+      "llm_tldr_en": "PSAO is a structured prompt optimization method that decomposes prompts into segments with importance annotations to guide LLM attention, improving efficiency and controllability.",
+      "llm_tldr_cn": "现有提示优化方法在非结构化空间中成本高昂且可能扭曲意图，PSAO将提示分解为可解释片段并添加{重要}等标注，引导LLM集中注意力，实验表明能提高控制性与效率，为结构化提示工程提供新方向。",
+      "llm_tldr": "现有提示优化方法在非结构化空间中成本高昂且可能扭曲意图，PSAO将提示分解为可解释片段并添加{重要}等标注，引导LLM集中注意力，实验表明能提高控制性与效率，为结构化提示工程提供新方向。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.15665v1",
+      "source": "arxiv",
+      "title": "PRISM: Prompt Reliability via Iterative Simulation and Monitoring for Enterprise Conversational AI",
+      "abstract": "Deploying large language model (LLM)-driven conversational agents in enterprise settings requires prompts that are simultaneously correct at launch and resilient to the non-deterministic behavioral drift that characterizes production LLM deployments. Existing prompt optimization frameworks address prompt quality as a one-time compile-time problem, leaving open the equally critical question of how to detect and repair prompt regressions caused by silent LLM behavior changes over time. We present PRISM (Prompt Reliability via Iterative Simulation and Monitoring), a closed-loop framework that treats prompt engineering as a continuous reliability engineering problem rather than a one-time authorship task. PRISM takes as input plain-language agent requirements, a set of configured tools and memory variables, and an initial draft prompt. It automatically generates test cases from requirements, simulates full multi-turn conversations against a platform-faithful LLM environment, evaluates pass/fail using an LLM-as-judge, diagnoses root causes of failures, and surgically repairs the prompt -- iterating until all tests pass. Critically, PRISM is designed to run on a scheduled basis (daily), treating LLM behavioral drift as a first-class reliability concern. We evaluate PRISM across 35 enterprise conversational agents over a three-week deployment period on the Yellow.ai V3 platform. PRISM reduces median prompt authoring time from 2 days to under 30 minutes, achieves 99% production reliability across all evaluated agents, and successfully identifies and repairs production regressions caused by LLM behavioral drift within a 24-hour detection window. Our results suggest that continuous, simulation-driven prompt optimization is both tractable and necessary for reliable enterprise conversational AI at scale.",
+      "authors": [
+        "Keshava Chaitanya",
+        "Jahnavi Gundakaram"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-15T06:43:07+00:00",
+      "link": "https://arxiv.org/pdf/2605.15665v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Closed-loop framework for continuous prompt reliability; iterative simulation and monitoring to detect and repair prompt regressions.",
+      "llm_evidence_cn": "闭环连续提示可靠性框架，通过迭代仿真与监控检测修复提示退化。",
+      "llm_evidence": "闭环连续提示可靠性框架，通过迭代仿真与监控检测修复提示退化。",
+      "canonical_evidence": "闭环连续提示可靠性框架，通过迭代仿真与监控检测修复提示退化。",
+      "llm_tldr_en": "PRISM is a framework that treats prompt engineering as continuous reliability engineering, using iterative simulation and monitoring to automatically detect and repair prompt regressions caused by LLM behavior drift over time, thereby maintaining prompt quality in production.",
+      "llm_tldr_cn": "针对企业对话AI部署中提示在运行时因大模型行为漂移产生的退化问题，PRISM提出将提示工程视为持续可靠性工程。该框架通过迭代仿真生成测试用例并监控模型行为，自动检测提示退化并进行修复，而非一次性的优化。在企业对话任务上测试表明，PRISM能有效保持提示长期稳定与质量，为实际部署中的提示管理提供了闭环方案。",
+      "llm_tldr": "针对企业对话AI部署中提示在运行时因大模型行为漂移产生的退化问题，PRISM提出将提示工程视为持续可靠性工程。该框架通过迭代仿真生成测试用例并监控模型行为，自动检测提示退化并进行修复，而非一次性的优化。在企业对话任务上测试表明，PRISM能有效保持提示长期稳定与质量，为实际部署中的提示管理提供了闭环方案。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.18113v1",
+      "source": "arxiv",
+      "title": "iPOE: Interpretable Prompt Optimization via Explanations",
+      "abstract": "Prompt optimization has often been framed as a discrete search problem to find high-performing and robust instructions for an LLM. However, the search result might not make it transparent why and where specific prompt changes lead to performance gains. This is in contrast to how humans are instructed for annotation tasks. Here, researchers carefully design annotation guidelines, leading to enhanced annotation consistency. Our paper aims at joining these two approaches and introduces iPOE, a novel interpretable prompt optimization strategy via explanations. We guide the prompt optimization process by automatically created guidelines from explanations of annotation decisions (either automatically generated or from humans). This set of guidelines is furthermore optimized by as series of operations, including removing, adding, shuffling, and merging. The resulting prompt includes guidelines that instruct the annotation, making the decision process of the LLM and the optimization transparent. It therefore supports also laypeople in the area of prompt optimization, particularly in challenging domains requiring expertise. In our experiments on four datasets, we find that iPOE can improves over prompts without guidelines and with random selected guidelines by up to $31\\%$ and $35\\%$, respectively. Moreover, LLM explanations can replace human explanations in the proposed method.",
+      "authors": [
+        "Jiahui Li",
+        "Sean Papay",
+        "Roman Klinger"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-18T09:21:04+00:00",
+      "link": "https://arxiv.org/pdf/2605.18113v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Interpretable prompt optimization strategy using automatically generated guidelines from explanations",
+      "llm_evidence_cn": "可解释的提示优化策略，利用从解释自动生成的指南指导优化",
+      "llm_evidence": "可解释的提示优化策略，利用从解释自动生成的指南指导优化",
+      "canonical_evidence": "可解释的提示优化策略，利用从解释自动生成的指南指导优化",
+      "llm_tldr_en": "iPOE integrates explanation-based annotation guidelines into prompt optimization, making the prompt refinement process transparent and aligned with human-instructed annotation practices, leading to more robust prompts.",
+      "llm_tldr_cn": "传统提示优化常作为黑箱搜索，缺乏可解释性。本文提出iPOE，通过自动或人工解释生成标注指南，并利用这些指南指导提示优化。该方法在保持高性能的同时，揭示了提示修改如何影响性能，使优化过程透明化，并有助于生成更鲁棒的指令。",
+      "llm_tldr": "传统提示优化常作为黑箱搜索，缺乏可解释性。本文提出iPOE，通过自动或人工解释生成标注指南，并利用这些指南指导提示优化。该方法在保持高性能的同时，揭示了提示修改如何影响性能，使优化过程透明化，并有助于生成更鲁棒的指令。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.18869v1",
+      "source": "arxiv",
+      "title": "MO-CAPO: Multi-Objective Cost-Aware Prompt Optimization",
+      "abstract": "Large language models (LLMs) achieve strong performance across a wide range of tasks but are highly sensitive to prompt design, motivating the need for automatic prompt optimization. Existing methods predominantly focus on performance alone, ignoring competing objectives such as inference cost or latency. At the same time, existing work on multi-objective prompt optimization relies on off-the-shelf NSGA-II, ignoring optimization efficiency. As a remedy, we introduce MO-CAPO, a novel multi-objective prompt optimization algorithm that jointly optimizes performance and inference cost while leveraging budget allocation for cost-efficient optimization. We further propose a deployment-oriented cost objective that captures the full computational profile of LLM inference. We evaluate our approach across four tasks and three LLMs and compare it to an NSGA-II-based multi-objective method and state-of-the-art single-objective prompt optimizers. Results show that MO-CAPO consistently identifies strong, robust, and diverse Pareto front approximations while maintaining cost-efficiency. It outperforms the NSGA-II baseline on 8 out of 12 cases in terms of the noisy R2 metric and achieves competitive performances often already at a considerably lower budget. The discovered solution sets span diverse performance-cost trade-offs that are omitted by single-objective optimizers, yet the top-performance candidates remain competitive with single-objective solutions. Additionally, we conduct the first evaluation of multi-objective machine learning experiments that considers generalization and robustness through noisy R2 and approximation gap, enabling a more realistic assessment of solution quality. MO-CAPO enables practitioners to select from an efficiently discovered set of multiple prompts offering different trade-offs between performance and cost.",
+      "authors": [
+        "Jan Büssing",
+        "Moritz Schlager",
+        "Timo Heiß",
+        "Tom Zehle",
+        "Matthias Feurer"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.NE"
+      ],
+      "published": "2026-05-15T14:56:27+00:00",
+      "link": "https://arxiv.org/pdf/2605.18869v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Multi-objective automatic prompt optimization jointly optimizing performance and inference cost with budget allocation",
+      "llm_evidence_cn": "多目标自动提示优化，联合优化性能和推理成本并分配预算",
+      "llm_evidence": "多目标自动提示优化，联合优化性能和推理成本并分配预算",
+      "canonical_evidence": "多目标自动提示优化，联合优化性能和推理成本并分配预算",
+      "llm_tldr_en": "MO-CAPO introduces a novel multi-objective prompt optimization algorithm that balances task performance and inference cost, using a deployment-oriented cost objective and efficient budget allocation for cost-effective search.",
+      "llm_tldr_cn": "针对现有自动提示优化仅关注性能而忽略推理成本的问题，本文提出MO-CAPO算法，在优化提示时同时考虑任务性能和推理开销。通过设计面向部署的成本目标并引入预算分配机制，实现了高效的多目标提示搜索。实验表明，该方法在保持高性能的同时显著降低了推理成本，为实用化提示优化提供了权衡方案。",
+      "llm_tldr": "针对现有自动提示优化仅关注性能而忽略推理成本的问题，本文提出MO-CAPO算法，在优化提示时同时考虑任务性能和推理开销。通过设计面向部署的成本目标并引入预算分配机制，实现了高效的多目标提示搜索。实验表明，该方法在保持高性能的同时显著降低了推理成本，为实用化提示优化提供了权衡方案。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "What are the latest techniques for automatic prompt optimization in large language models?",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.21318v1",
+      "source": "arxiv",
+      "title": "TextReg: Mitigating Prompt Distributional Overfitting via Regularized Text-Space Optimization",
+      "abstract": "Large language models (LLMs) are highly sensitive to the prompts used to specify task objectives and behavioral constraints. Many recent prompt optimization methods iteratively rewrite prompts using LLM-generated feedback, but the resulting prompts often become longer, accumulate narrow sample-specific rules, and generalize poorly beyond the training distribution. We study this failure mode as prompt distributional overfitting and argue that it reflects a lack of representation control in discrete text-space optimization. We formalize this view through representational inefficiency, a dual-factor measure that decomposes prompt inefficiency into capacity cost and scope narrowness, attributing distributional prompt overfitting to their coupled growth during optimization. We propose TextReg, a regularization framework that realizes a soft-penalty objective through regularized textual gradients, combining Dual-Evidence Gradient Purification, Semantic Edit Regularization, and Regularization-Guided Prompt Update. Across multiple reasoning benchmarks, TextReg substantially improves out-of-distribution (OOD) generalization, with accuracy gains of up to +11.8% over TextGrad and +16.5% over REVOLVE.",
+      "authors": [
+        "Lucheng Fu",
+        "Ye Yu",
+        "Yiyang Wang",
+        "Yiqiao Jin",
+        "Haibo Jin",
+        "B. Aditya Prakash",
+        "Haohan Wang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-20T15:47:26+00:00",
+      "link": "https://arxiv.org/pdf/2605.21318v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Addresses prompt distributional overfitting in text-space optimization by proposing a regularized optimization method.",
+      "llm_evidence_cn": "通过提出正则化文本空间优化方法解决提示分布过拟合问题。",
+      "llm_evidence": "通过提出正则化文本空间优化方法解决提示分布过拟合问题。",
+      "canonical_evidence": "通过提出正则化文本空间优化方法解决提示分布过拟合问题。",
+      "llm_tldr_en": "Identifies that iterative prompt optimization often leads to overfitting to training distributions; proposes representational inefficiency measure and regularized optimization to improve generalization.",
+      "llm_tldr_cn": "迭代提示优化常导致在训练分布上过拟合，泛化性差。该文形式化分布过拟合为表征低效，提出双因子度量并设计正则化文本空间优化方法，实验表明可提升提示泛化能力，保障意图一致性。",
+      "llm_tldr": "迭代提示优化常导致在训练分布上过拟合，泛化性差。该文形式化分布过拟合为表征低效，提出双因子度量并设计正则化文本空间优化方法，实验表明可提升提示泛化能力，保障意图一致性。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.21781v1",
+      "source": "arxiv",
+      "title": "Reflective Prompt Tuning through Language Model Function-Calling",
+      "abstract": "Large language models (LLMs) have become increasingly capable of following instructions and complex reasoning, making prompting a flexible interface for adapting models without parameter updates. Yet prompt design remains labor-intensive and highly sensitive to formatting, phrasing, and instruction order, motivating automated prompt optimization methods that reduce manual effort while preserving inference-time flexibility. However, existing methods often search over prompt candidates or use fixed critique-refine pipelines driven by individual examples or small batches, limiting their ability to capture systematic error patterns and make targeted edits grounded in failure history. We propose Reflective Prompt Tuning (RPT), a framework that uses LLM function calling to simulate the iterative workflow of human prompt engineers. An LLM optimizer calls a diagnostic function that evaluates the target model over an entire optimization set, summarizes recurring failure modes, and returns a structured diagnostic report. The optimizer uses this report, together with an accumulated memory of prior reports, to revise the prompt for the next iteration. RPT further supports confidence-aware optimization by using calibration signals in diagnostic feedback and final prompt selection. Across three reasoning tasks, RPT improves over initial prompts by up to 12.9 points, remains competitive with state of the art, and improves confidence calibration. Our analyses show that RPT is especially effective on multi-hop and mathematical reasoning, producing targeted prompt revisions that align with diagnosed failure patterns and lead to gains in task performance and calibration.",
+      "authors": [
+        "Farima Fatahi Bayat",
+        "Moin Aminnaseri",
+        "Pouya Pezeshkpour",
+        "Estevam Hruschka"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-20T22:21:29+00:00",
+      "link": "https://arxiv.org/pdf/2605.21781v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "automated prompt optimization via iterative refinement using LLM function calling based on failure history",
+      "llm_evidence_cn": "基于失败历史的迭代反思，利用LLM函数调用实现自动提示优化",
+      "llm_evidence": "基于失败历史的迭代反思，利用LLM函数调用实现自动提示优化",
+      "canonical_evidence": "基于失败历史的迭代反思，利用LLM函数调用实现自动提示优化",
+      "llm_tldr_en": "Reflective Prompt Tuning automates prompt optimization by leveraging systematic error patterns and targeted edits using LLM function calling.",
+      "llm_tldr_cn": "Reflective Prompt Tuning (RPT) 针对手工提示设计费时且敏感的问题，提出一种利用LLM功能调用自动优化提示的框架。RPT通过分析任务失败历史捕获系统性错误模式，并据此进行有针对性的编辑，突破现有方法仅依赖单一示例或小批量反馈的局限。实验表明RPT能有效提升提示质量，减少人工干预，实现推理时灵活适配。该框架为提示工程提供了更系统、更可解释的自动化途径。",
+      "llm_tldr": "Reflective Prompt Tuning (RPT) 针对手工提示设计费时且敏感的问题，提出一种利用LLM功能调用自动优化提示的框架。RPT通过分析任务失败历史捕获系统性错误模式，并据此进行有针对性的编辑，突破现有方法仅依赖单一示例或小批量反馈的局限。实验表明RPT能有效提升提示质量，减少人工干预，实现推理时灵活适配。该框架为提示工程提供了更系统、更可解释的自动化途径。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.22195v1",
+      "source": "arxiv",
+      "title": "Reinforced Graph of Thoughts: RL-Driven Adaptive Prompting for LLMs",
+      "abstract": "Graph of Thoughts (GoT), a generalized form of recent prompting paradigms for large language models (LLMs), has been shown to be useful for elaborate problem solving. By executing a graph of operations, thoughts of the LLM are structured as an arbitrary graph, forming the actual graph of thoughts. Originally, the graph of operations is defined manually, which requires in-depth knowledge about the solution of the problem to solve. Such a static graph of operations is rigid and therefore lacks adaptability. We propose Reinforced Graph of Thoughts (RGoT), an automated approach to the GoT prompting paradigm that leverages reinforcement learning (RL) to adaptively generate a graph of operations from a human-defined set. Results indicate that, under certain constraints, it is possible to construct graphs of operations adaptively to the task's complexity in an automated way.",
+      "authors": [
+        "Manuel Noah Riesen",
+        "Peter Alfred von Niederhäusern"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-21T09:00:16+00:00",
+      "link": "https://arxiv.org/pdf/2605.22195v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "RL-driven adaptive prompting automates graph of thoughts generation for problem solving",
+      "llm_evidence_cn": "强化学习驱动的自适应提示自动生成思维图以解决问题",
+      "llm_evidence": "强化学习驱动的自适应提示自动生成思维图以解决问题",
+      "canonical_evidence": "强化学习驱动的自适应提示自动生成思维图以解决问题",
+      "llm_tldr_en": "Reinforced Graph of Thoughts uses RL to automate the construction of prompt operation graphs, enabling adaptive reasoning without manual design.",
+      "llm_tldr_cn": "针对思维图（Graph of Thoughts）提示范式需要人工定义操作图、缺乏适应性的问题，本文提出Reinforced Graph of Thoughts (RGoT)，利用强化学习从预定义操作集中自适应生成操作图。RGoT使大型语言模型能在不同问题下动态调整推理结构，实验结果表明其在特定条件下优于静态图。该研究推动了高级提示技术的自动化，减少了对领域专家手工设计的依赖。",
+      "llm_tldr": "针对思维图（Graph of Thoughts）提示范式需要人工定义操作图、缺乏适应性的问题，本文提出Reinforced Graph of Thoughts (RGoT)，利用强化学习从预定义操作集中自适应生成操作图。RGoT使大型语言模型能在不同问题下动态调整推理结构，实验结果表明其在特定条件下优于静态图。该研究推动了高级提示技术的自动化，减少了对领域专家手工设计的依赖。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.25984v1",
+      "source": "arxiv",
+      "title": "SafeCtrl-RL: Inference-Time Adaptive Behaviour Control for LLM Dialogue via RL-Driven Prompt Optimisation",
+      "abstract": "Ensuring safe and contextually appropriate behaviour in Large Language Models (LLMs) remains a critical challenge for real-world deployment. We present \\textbf{SafeCtrl-RL}, an inference-time behavioural control framework that enables adaptive safety regulation without model retraining or parameter modification. The method formulates dialogue generation as a sequential decision process, where a reinforcement learning agent dynamically selects prompt adjustment strategies based on contextual feedback. This allows unsafe behaviours to be suppressed through iterative refinement, which we conceptualise as inference-time behavioural unlearning. Evaluated across multiple LLMs and unsafe dialogue scenarios, SafeCtrl-RL consistently improves safety and response quality, outperforms existing prompt-based optimisation methods, and achieves favourable performance--efficiency trade-offs. **Warning: This paper may contain examples of harmful language, and reader discretion is recommended.",
+      "authors": [
+        "Michael Orme",
+        "Yanchao Yu",
+        "Zhiyuan Tan"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-25T16:03:38+00:00",
+      "link": "https://arxiv.org/pdf/2605.25984v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "RL-driven prompt optimisation framework for adaptive safety regulation during inference",
+      "llm_evidence_cn": "基于强化学习的提示优化框架，实现推理时自适应安全调节",
+      "llm_evidence": "基于强化学习的提示优化框架，实现推理时自适应安全调节",
+      "canonical_evidence": "基于强化学习的提示优化框架，实现推理时自适应安全调节",
+      "llm_tldr_en": "SafeCtrl-RL uses reinforcement learning to dynamically optimize prompts at inference time, suppressing unsafe LLM behaviors without retraining.",
+      "llm_tldr_cn": "SafeCtrl-RL提出了一种无需重训模型、在推理时通过强化学习动态优化提示的框架，以抑制大型语言模型的不安全行为。该方法将对话生成建模为序列决策过程，RL智能体根据上下文反馈自适应选择提示调整策略，从而实现行为的安全调节。实验在多个LLM和风险对话场景中验证了其有效性，一致性优于传统安全控制方法。该工作为LLM部署中的安全对齐提供了轻量级解决方案。",
+      "llm_tldr": "SafeCtrl-RL提出了一种无需重训模型、在推理时通过强化学习动态优化提示的框架，以抑制大型语言模型的不安全行为。该方法将对话生成建模为序列决策过程，RL智能体根据上下文反馈自适应选择提示调整策略，从而实现行为的安全调节。实验在多个LLM和风险对话场景中验证了其有效性，一致性优于传统安全控制方法。该工作为LLM部署中的安全对齐提供了轻量级解决方案。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.27642v1",
+      "source": "arxiv",
+      "title": "Learning to Translate from Soft to Hard LLM Prompts",
+      "abstract": "Soft prompt tuning is a parameter-efficient method for adapting LLMs to specific tasks, but suffers from a lack of interpretability. Building on recent work on interpreting soft prompts (Ramati et al., 2024), we explore how training a dedicated soft prompt to natural language translation model can yield higher translation quality. In particular, in both quantitative and qualitative comparisons on multiple Datasets of Datasets (DoDs), we demonstrate that our translator produces fluent, accurate verbalizations that outperforms existing training-free methods like InSPEcT. In addition to advancing interpretability, our work suggests a promising downstream application: soft prompts optimized on small, open-source models can be translated into portable text prompts that, when deployed on larger closed-API models, exceed the performance of the original soft prompt and, in some cases, even few-shot learning.",
+      "authors": [
+        "Pitipat Kongsomjit",
+        "Suryansh Goyal",
+        "Jacob Whitehill"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-05-26T20:03:08+00:00",
+      "link": "https://arxiv.org/pdf/2605.27642v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Translates soft prompts to natural language prompts, enabling portable and interpretable prompt optimization.",
+      "llm_evidence_cn": "将软提示转化为自然语言提示，实现可移植且可解释的提示优化。",
+      "llm_evidence": "将软提示转化为自然语言提示，实现可移植且可解释的提示优化。",
+      "canonical_evidence": "将软提示转化为自然语言提示，实现可移植且可解释的提示优化。",
+      "llm_tldr_en": "Proposes training a dedicated soft-to-hard prompt translation model that converts opaque soft prompts into fluent, accurate natural language prompts, outperforming training-free methods and enabling transfer of optimized prompts across models.",
+      "llm_tldr_cn": "软提示调优缺乏可解释性，该工作训练专门的翻译模型将软提示转化为自然语言，实验表明生成的硬提示流畅准确，优于现有免训练方法，并可将小模型上优化的软提示移植到其他模型，推动了可解释提示优化。",
+      "llm_tldr": "软提示调优缺乏可解释性，该工作训练专门的翻译模型将软提示转化为自然语言，实验表明生成的硬提示流畅准确，优于现有免训练方法，并可将小模型上优化的软提示移植到其他模型，推动了可解释提示优化。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "methods for fine-tuning prompts on downstream tasks",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28360v1",
+      "source": "arxiv",
+      "title": "Prompt Codebooks: Discrete Compositional Optimization for Language Model Instruction Refinement",
+      "abstract": "Automatic prompt optimization (APO) has driven significant gains in LLM-based agentic workflows. However, existing methods treat each task's prompt as a monolithic, instance-blind string optimized through global edits, producing brittle updates and preventing the reuse of learned sub-behaviors. We propose Prompt Codebooks (PCO), a novel compositional prompt optimization framework that recasts APO as discrete learning over a finite vocabulary of natural-language instincts - atomic, reusable instruction units. PCO organizes prompt-construction knowledge in a discrete codebook and routes each input to a small subset of entries via an LLM-based encoder; a generator composes them into a prompt for the frozen target model; a critic emits a structured verdict that decomposes by attribution into per-variable textual gradients, jointly training the encoder, generator, and codebook under a language-valued min-max objective. The resulting routing is per-instance: different inputs in the same task receive different instinct compositions, a regime structurally inexpressible under instance-blind methods. Across six benchmarks on Qwen3-8B and LLaMA-3.1-8B, PCO improves over zero-shot by up to +30.36 points, surpasses the strongest prior baseline (GEPA) by +3.34 on HotpotQA and +1.11 in aggregate, and reduces deployed prompt length by up to 14.1x versus MIPROv2 and 3.0x versus GEPA using only K=16 instincts.",
+      "authors": [
+        "Jyotirmoy Nath",
+        "Neeraj Kumar",
+        "Brejesh Lall"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-27T11:57:12+00:00",
+      "link": "https://arxiv.org/pdf/2605.28360v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Introduces Prompt Codebooks, a compositional APO method using discrete learning over reusable instruction units",
+      "llm_evidence_cn": "提出提示码本，一种组合式的自动提示优化方法，在可复用指令单元上离散学习",
+      "llm_evidence": "提出提示码本，一种组合式的自动提示优化方法，在可复用指令单元上离散学习",
+      "canonical_evidence": "提出提示码本，一种组合式的自动提示优化方法，在可复用指令单元上离散学习",
+      "llm_tldr_en": "Prompt Codebooks recasts automatic prompt optimization as discrete learning over a vocabulary of natural-language instincts, composing reusable instruction units via an LLM-based encoder-generator architecture, improving prompt robustness and enabling sub-behavior reuse.",
+      "llm_tldr_cn": "现有自动提示优化方法将提示视为整体字符串并全局编辑，导致更新脆弱且无法复用学习到的子行为。本文提出提示码本（PCO），将提示优化转化为在有限自然语言本能词汇上的离散学习。通过离散码本组织提示构建知识，并利用基于LLM的编码器为每个输入路由到少量条目，生成器组合成提示。该方法在实验中展示了更鲁棒和可解释的提示优化，促进了提示组件的跨任务复用。",
+      "llm_tldr": "现有自动提示优化方法将提示视为整体字符串并全局编辑，导致更新脆弱且无法复用学习到的子行为。本文提出提示码本（PCO），将提示优化转化为在有限自然语言本能词汇上的离散学习。通过离散码本组织提示构建知识，并利用基于LLM的编码器为每个输入路由到少量条目，生成器组合成提示。该方法在实验中展示了更鲁棒和可解释的提示优化，促进了提示组件的跨任务复用。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29076v1",
+      "source": "arxiv",
+      "title": "Structured Prompt Optimization Meets Reinforcement Learning for Global and Local Interpretability over Complex Text",
+      "abstract": "LLMs have advanced text classification, yet existing paradigms face a trade-off: supervised (label only) fine-tuning is scalable but offers limited reasoning on complex text and lacks broader model transparency, while discrete prompt optimization offers human-readable instructions but struggles with performance and scalability. We introduce eXTC (eXplainable Text Classifier) with three progressive stages: (1) learning a Standard Operating Procedure (SOP, or rulebook) in natural language via a new Structured Prompt Optimization algorithm; (2) SOP-grounded reasoning distillation from a large teacher LLM into a compact LM; and (3) expanding reasoning capabilities beyond the initial SOP via reinforcement learning. This design enables eXTC to provide (i) fast inference via a compact LM, with (ii) inference-time local reasoning traces, alongside a global, modular explanation of its learned domain rules, while (iii) significantly outperforming existing paradigms across diverse benchmarks in both classification performance and explanation quality, with stage-by-stage gains.",
+      "authors": [
+        "Tianyang Zhou",
+        "Wenbo Chen",
+        "Pierre Jinghong Liang",
+        "Leman Akoglu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-27T20:29:41+00:00",
+      "link": "https://arxiv.org/pdf/2605.29076v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes a structured prompt optimization algorithm",
+      "llm_evidence_cn": "提出结构化提示优化算法",
+      "llm_evidence": "提出结构化提示优化算法",
+      "canonical_evidence": "提出结构化提示优化算法",
+      "llm_tldr_en": "Introduces eXTC, a text classifier that uses a novel Structured Prompt Optimization algorithm to learn interpretable rulebooks, then distills reasoning into a compact LM, achieving better interpretability and performance.",
+      "llm_tldr_cn": "针对文本分类中可解释性与性能的权衡，提出eXTC框架，通过结构化提示优化算法自动发现可解释的标准操作程序（SOP），再经过推理蒸馏和强化学习，在复杂文本上实现高性能和可解释性，验证了自动化提示搜索在可解释AI中的价值。",
+      "llm_tldr": "针对文本分类中可解释性与性能的权衡，提出eXTC框架，通过结构化提示优化算法自动发现可解释的标准操作程序（SOP），再经过推理蒸馏和强化学习，在复杂文本上实现高性能和可解释性，验证了自动化提示搜索在可解释AI中的价值。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29678v1",
+      "source": "arxiv",
+      "title": "Spurious Prompts: Can Irrelevant Prompts Steer Large Language Models?",
+      "abstract": "Large language models are highly sensitive to prompts, but this sensitivity is usually studied through task-relevant instructions, demonstrations, or reasoning cues. In this paper, we study a different form of prompt sensitivity: whether prompts that are semantically unrelated to the task can nevertheless steer model behavior. We call them spurious prompts and show their surprising efficacy. We also propose a simple black-box search procedure for discovering them. Across reasoning and question-answering benchmarks, using models ranging from 0.8B to 27B parameters and spanning three model families, we show that spurious prompts can improve performance, often matching or outperforming standard prompting baselines and task-aware prompt optimization. We further show that they can steer models toward unintended behaviors, such as repeatedly selecting the first answer option, producing incorrect answers, returning an even, prime or small number without explicitly instructing the model to do so. These findings reveal a new kind of prompt sensitivity: LLMs can be systematically steered by prompts that are unrelated to the task they are asked to solve. Our code is available at https://github.com/Batorskq/spurious",
+      "authors": [
+        "Pawel Batorski",
+        "Abtin Pourhadi",
+        "Jerzy Sarosiek",
+        "Przemyslaw Spurek",
+        "Paul Swoboda"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-28T09:39:44+00:00",
+      "link": "https://arxiv.org/pdf/2605.29678v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "black-box search procedure for discovering spurious prompts that improve model performance",
+      "llm_evidence_cn": "黑盒搜索过程发现能提升模型性能的无关提示",
+      "llm_evidence": "黑盒搜索过程发现能提升模型性能的无关提示",
+      "canonical_evidence": "黑盒搜索过程发现能提升模型性能的无关提示",
+      "llm_tldr_en": "Spurious prompts, semantically unrelated to the task, can be effectively discovered via black-box search to steer LLM behavior, often matching task-aware prompt optimization.",
+      "llm_tldr_cn": "本研究发现语义与任务无关的“伪提示”也能显著影响大型语言模型的行为，并提出一种简单的黑盒搜索方法来自动发现这类提示。在多个推理和问答基准测试中，这些伪提示能匹配甚至超越标准提示基线和任务感知提示优化。该工作揭示了LLM对提示的泛化敏感性，并为无领域知识的自动化提示搜索提供了新思路。",
+      "llm_tldr": "本研究发现语义与任务无关的“伪提示”也能显著影响大型语言模型的行为，并提出一种简单的黑盒搜索方法来自动发现这类提示。在多个推理和问答基准测试中，这些伪提示能匹配甚至超越标准提示基线和任务感知提示优化。该工作揭示了LLM对提示的泛化敏感性，并为无领域知识的自动化提示搜索提供了新思路。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.01967v1",
+      "source": "arxiv",
+      "title": "Training Prompt Matters: State-Adaptive Optimization for Robust Fine-Tuning",
+      "abstract": "While prompt engineering is instrumental in maximizing the capabilities of Large Language Models (LLMs) during inference, the role of prompts during training remains critically underexplored. Prevailing fine-tuning paradigms typically treat training prompts as mere surface forms, assuming that semantically equivalent instructions yield identical learning outcomes. However, we reveal that this equivalence is deceptive: while paraphrased prompts often lead to comparable in-task performance, they induce drastically different cross-task impacts regarding catastrophic forgetting and generalization. Crucially, these impacts are positively correlated across tasks, indicating the existence of superior prompts that consistently yield better performance. Furthermore, we discover that these superior prompts can be robustly identified by task loss prior to learning. Leveraging these insights, we introduce State-Adaptive Prompt Optimization (SAPO), a lightweight yet effective training strategy that shifts task formulation from a static input to a dynamic, state-adaptive variable. Comprehensive experiments on diverse benchmarks confirm its effectiveness, which significantly mitigates forgetting while improving generalization, achieving substantial performance gains over state-of-the-art methods. These results provide insights into how training prompts shape learning dynamics and offer a practical recipe for robust fine-tuning. Our code is available at https://github.com/Eric8932/SAPO.",
+      "authors": [
+        "Wenhang Shi",
+        "Yiren Chen",
+        "Shuqing Bian",
+        "Zhe Zhao",
+        "Jinhao Dong",
+        "Pengfei Hu",
+        "Wei Lu",
+        "Xiaoyong Du"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-01T09:31:28+00:00",
+      "link": "https://arxiv.org/pdf/2606.01967v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Reveals training prompts drastically affect cross-task impacts; proposes state-adaptive optimization to select superior prompts.",
+      "llm_evidence_cn": "揭示训练提示词对跨任务影响显著，提出状态自适应优化选择优质提示。",
+      "llm_evidence": "揭示训练提示词对跨任务影响显著，提出状态自适应优化选择优质提示。",
+      "canonical_evidence": "揭示训练提示词对跨任务影响显著，提出状态自适应优化选择优质提示。",
+      "llm_tldr_en": "This paper investigates how training prompts affect fine-tuning robustness, finding that paraphrased prompts lead to comparable in-task but vastly different cross-task impacts; it proposes a state-adaptive optimization method to select prompts that consistently minimize catastrophic forgetting and improve generalization.",
+      "llm_tldr_cn": "研究训练提示词对微调鲁棒性的影响，发现等价提示导致显著不同的跨任务遗忘和泛化，正面影响正相关表明存在更优提示。提出状态自适应优化方法，在微调中动态选择训练提示词，以最小化灾难性遗忘、提升泛化。实验表明该方法可一致提升跨任务性能。",
+      "llm_tldr": "研究训练提示词对微调鲁棒性的影响，发现等价提示导致显著不同的跨任务遗忘和泛化，正面影响正相关表明存在更优提示。提出状态自适应优化方法，在微调中动态选择训练提示词，以最小化灾难性遗忘、提升泛化。实验表明该方法可一致提升跨任务性能。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "methods for fine-tuning prompts on downstream tasks",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.14055v1",
+      "source": "arxiv",
+      "title": "PEML: Parameter-efficient Multi-Task Learning with Optimized Continuous Prompts",
+      "abstract": "Parameter-Efficient Fine-Tuning (PEFT) is widely used for adapting Large Language Models (LLMs) for various tasks. Recently, there has been an increasing demand for fine-tuning a single LLM for multiple tasks because it requires overall less data for fine-tuning thanks to the common features shared among tasks. More importantly, LLMs are resource demanding and deploying a single model for multiple tasks facilitates resource consolidation and consumes significantly less resources compared to deploying individual large model for each task. Existing PEFT methods like LoRA and Prefix Tuning are designed to adapt LLMs to a specific task. LoRA and its variation focus on aligning the model itself for tasks, overlooking the importance of prompt tuning in multi-task learning while Prefix Tuning only adopts a simple architecture to optimize prompts, which limits the adaption capabilities for multi-task. To enable efficient fine-tuning for multi-task learning, it is important to co-optimize prompt optimization and model adaptation. In this work, we propose a Parameter-Efficient Multi-task Learning (\\PM), which employs a neural architecture engineering method for optimizing the continuous prompts while also performing low-rank adaption for model weights. We prototype PEML by creating an automated framework for optimizing the continuous prompts and adapting model weights. We evaluate PEML against state-of-the-arts multi-task learning methods MTL-LoRA, MultiLoRa, C-Poly, and MoE, on the GLUE, SuperGLUE, Massive Multitask Language Understanding, and commonsense reasoning benchmarks. The evaluation results present an average accuracy improvement of up to 6.67%, with individual tasks showing peak gains of up to 10.75%.",
+      "authors": [
+        "Anjir Ahmed Chowdhury",
+        "Syed Zawad",
+        "Xiaolong Ma",
+        "Xu Dong",
+        "Feng Yan"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-13T19:25:56+00:00",
+      "link": "https://arxiv.org/pdf/2605.14055v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Proposes PEML, parameter-efficient multi-task learning with optimized continuous prompts for LLMs",
+      "llm_evidence_cn": "提出PEML，使用优化的连续提示实现参数高效的多任务学习",
+      "llm_evidence": "提出PEML，使用优化的连续提示实现参数高效的多任务学习",
+      "canonical_evidence": "提出PEML，使用优化的连续提示实现参数高效的多任务学习",
+      "llm_tldr_en": "PEML extends parameter-efficient fine-tuning to multi-task settings by optimizing continuous prompts (soft prompts) that enable a single LLM to handle multiple tasks, reducing resource consumption compared to separate adapters.",
+      "llm_tldr_cn": "现有参数高效微调方法如LoRA和Prefix Tuning主要针对单任务设计，本文提出PEML，通过优化连续提示（软提示）实现多任务共享LLM的参数高效学习。该方法将提示调优与模型适配器结合，在多个下游任务上展现了性能与资源的良好平衡，为多任务部署提供了高效方案。",
+      "llm_tldr": "现有参数高效微调方法如LoRA和Prefix Tuning主要针对单任务设计，本文提出PEML，通过优化连续提示（软提示）实现多任务共享LLM的参数高效学习。该方法将提示调优与模型适配器结合，在多个下游任务上展现了性能与资源的良好平衡，为多任务部署提供了高效方案。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "methods for fine-tuning prompts on downstream tasks",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.26655v1",
+      "source": "arxiv",
+      "title": "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis",
+      "abstract": "Automated prompt optimization methods (e.g., DSpy, TextGrad) can substantially improve the performance of large language model (LLM), however, their generalization ability across different tasks remains underperformed. In practice, the superiority of the optimized prompt on one benchmark often fails to transfer to another, and this limitation persists even when switching across different LLM backbones. To investigate the underexplored sources of heterogeneity in prompt performance, we conduct a causal inference-inspired observational analysis of optimized prompts across a diverse set of optimization frameworks, LLM backbones, and NLP benchmarks. To achieve the goal, we build upon the propensity-adjusted associational analysis together with multiple complementary representations of prompt edits, where the consistent task-conditioned edits patterns are identified. We find that complexity-increasing and meta-instructional edits are negatively associated with mathematical and multi-hop reasoning performance, whereas step-by-step and meta-cognitive edits improve logical and sequential reasoning tasks. These effects are robust across cognitive-load annotations, surface-level text features, and edit-motif analyses, and can generalize across optimization frameworks. Overall, these results indicate that prompt optimization failures arise from systematic interactions between edit families and task characteristics rather than random optimization artifacts, providing feature-level characterization of optimizer behavior and motivating future task-conditioned optimizer design.",
+      "authors": [
+        "Shuzhi Gong",
+        "Hechuan Wen"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "cs.NE"
+      ],
+      "published": "2026-05-26T07:39:36+00:00",
+      "link": "https://arxiv.org/pdf/2605.26655v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Analyzes prompt optimization methods to understand sources of performance heterogeneity and generalization failure.",
+      "llm_evidence_cn": "分析提示优化方法，探究性能异质性来源和泛化失败原因。",
+      "llm_evidence": "分析提示优化方法，探究性能异质性来源和泛化失败原因。",
+      "canonical_evidence": "分析提示优化方法，探究性能异质性来源和泛化失败原因。",
+      "llm_tldr_en": "Conducts causal-inspired analysis of optimized prompts across frameworks, models, and tasks, revealing that certain edits cause instability; provides insights for developing more robust optimization.",
+      "llm_tldr_cn": "针对优化后提示泛化性不足的问题，该研究采用因果推断启发的观测分析，系统考察不同框架、模型和任务下的提示编辑效果，发现特定编辑类型导致不稳定，为设计更鲁棒的提示优化提供机理洞见。",
+      "llm_tldr": "针对优化后提示泛化性不足的问题，该研究采用因果推断启发的观测分析，系统考察不同框架、模型和任务下的提示编辑效果，发现特定编辑类型导致不稳定，为设计更鲁棒的提示优化提供机理洞见。",
+      "llm_tags": [
+        "query:prompt-opt:composite"
+      ],
+      "matched_query_tag": "query:prompt-opt:composite",
+      "matched_query_text": "Papers central to 研究提示词优化的相关论文, especially work that connects or combines: techniques for optimizing prompts in language models; best practices for designing effective prompts; methods for fine-tuning prompts on downstream tasks; optimizing natural language instructions for model performance; automated search for optimal prompts; What are the latest techniques for automatic prompt optimization in large language models?; How to optimize prompts for specific downstream tasks like question answering?.",
+      "matched_requirement_id": "req-composite-prompt-opt",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.14053v1",
+      "source": "arxiv",
+      "title": "Derivation Prompting: A Logic-Based Method for Improving Retrieval-Augmented Generation",
+      "abstract": "The application of Large Language Models to Question Answering has shown great promise, but important challenges such as hallucinations and erroneous reasoning arise when using these models, particularly in knowledge-intensive, domain-specific tasks. To address these issues, we introduce Derivation Prompting, a novel prompting technique for the generation step of the Retrieval-Augmented Generation framework. Inspired by logic derivations, this method involves deriving conclusions from initial hypotheses through the systematic application of predefined rules. It constructs a derivation tree that is interpretable and adds control over the generation process. We applied this method in a specific case study, significantly reducing unacceptable answers compared to traditional RAG and long-context window methods.",
+      "authors": [
+        "Ignacio Sastre",
+        "Guillermo Moncecchi",
+        "Aiala Rosá"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-13T19:20:16+00:00",
+      "link": "https://arxiv.org/pdf/2605.14053v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "novel prompting technique for question answering using logic derivations",
+      "llm_evidence_cn": "针对问答任务提出基于逻辑推导的新型提示技术",
+      "llm_evidence": "针对问答任务提出基于逻辑推导的新型提示技术",
+      "canonical_evidence": "针对问答任务提出基于逻辑推导的新型提示技术",
+      "llm_tldr_en": "Derivation Prompting introduces a logic-based prompting technique for RAG that constructs derivation trees to control generation, reducing hallucinations in domain-specific QA.",
+      "llm_tldr_cn": "针对大语言模型在知识密集型问答中的幻觉问题，本文提出推导提示技术，通过系统应用预定义规则从初始假设推导结论，构建可解释的推导树以控制生成。在案例研究中显著减少了不可接受响应，为可控生成提供了逻辑驱动的提示设计范式。",
+      "llm_tldr": "针对大语言模型在知识密集型问答中的幻觉问题，本文提出推导提示技术，通过系统应用预定义规则从初始假设推导结论，构建可解释的推导树以控制生成。在案例研究中显著减少了不可接受响应，为可控生成提供了逻辑驱动的提示设计范式。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "best practices for designing effective prompts",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.17247v1",
+      "source": "arxiv",
+      "title": "Towards Robust Argumentative Essay Understanding via TIDE: An Interactive Framework with Trial and Debate",
+      "abstract": "Argumentative essays serve as a vital medium for assessing critical thinking and reasoning skills, yet there is limited works on accurately understanding and evaluating such texts via prompt. In this work, we propose TIDE, a novel framework designed to improve criteria-based prompt optimization for argument-related tasks by integrating TrIal and DEbate mechanism. Our method addresses key limitations of criteria-based prompt optimizing by mitigating the influence of noisy training data and enhancing optimization stability. We evaluate TIDE on three core tasks: Automated Essay Scoring, Argument Component Detection, and Argument Relation Identification. Results demonstrate that our framework improves performance across tasks. These findings underscore the potential of combining prompt-based methods for advanced argument understanding.",
+      "authors": [
+        "Zheqin Yin",
+        "Yupei Ren",
+        "Yadong Zhang",
+        "Yujiang Lu",
+        "Man Lan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-17T04:10:36+00:00",
+      "link": "https://arxiv.org/pdf/2605.17247v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "criteria-based prompt optimization with trial and debate for robust argumentative essay tasks",
+      "llm_evidence_cn": "基于准则的提示优化，集成试探与辩论，用于论说文任务",
+      "llm_evidence": "基于准则的提示优化，集成试探与辩论，用于论说文任务",
+      "canonical_evidence": "基于准则的提示优化，集成试探与辩论，用于论说文任务",
+      "llm_tldr_en": "TIDE improves criteria-based prompt optimization for argumentative tasks by incorporating trial and debate mechanisms to handle noisy data, achieving robust performance on essay scoring and argument detection.",
+      "llm_tldr_cn": "论说文理解任务中现有的提示优化受噪声数据和不稳定性困扰。本文提出TIDE框架，通过试探与辩论机制迭代优化提示准则，降低噪声数据影响并提升稳定性。在自动作文评分、论点检测和关系识别三项任务上验证了有效性，为特定下游任务的鲁棒提示优化提供了新方法。",
+      "llm_tldr": "论说文理解任务中现有的提示优化受噪声数据和不稳定性困扰。本文提出TIDE框架，通过试探与辩论机制迭代优化提示准则，降低噪声数据影响并提升稳定性。在自动作文评分、论点检测和关系识别三项任务上验证了有效性，为特定下游任务的鲁棒提示优化提供了新方法。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "How to optimize prompts for specific downstream tasks like question answering?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.28058v1",
+      "source": "arxiv",
+      "title": "Prompting Is All You Need: Multi-view Prompting Large Language Models for Aspect-Based Sentiment Analysis",
+      "abstract": "Recent work explored the capabilities of Large Language Models (LLMs) in Aspect-Based Sentiment Analysis (ABSA) through few-shot prompting, requiring substantially fewer annotated examples while achieving notable improvements over zero-shot baselines. However, a performance gap remained compared to models fine-tuned on hundreds of examples, and the computational costs of LLM inference present practical barriers to deployment. We introduce LLM-based Multi-View Prompting (LLM-MvP), which adapts the multi-view principle of considering multiple element orderings to LLM prompting. By combining schema-constrained decoding with a context-free grammar and prefix batching, LLM-MvP achieves performance competitive or superior to fine-tuned approaches while substantially reducing computational overhead. Extensive experiments across five benchmark datasets demonstrate that LLM-MvP closes the gap between few-shot prompting and fine-tuned models, offering a practical and efficient solution for ABSA.",
+      "authors": [
+        "Nils Constantin Hellwig",
+        "Niklas Donhauser",
+        "Jakob Fehle",
+        "Udo Kruschwitz",
+        "Christian Wolff"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-27T07:04:39+00:00",
+      "link": "https://arxiv.org/pdf/2605.28058v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multi-view prompting for aspect-based sentiment analysis",
+      "llm_evidence_cn": "面向方面级情感分析的多视角提示设计",
+      "llm_evidence": "面向方面级情感分析的多视角提示设计",
+      "canonical_evidence": "面向方面级情感分析的多视角提示设计",
+      "llm_tldr_en": "LLM-MvP adapts multi-view ordering principle to LLM prompting for ABSA, combining schema-constrained decoding and prefix batching to achieve competitive performance with low cost.",
+      "llm_tldr_cn": "面向情感分析，现有大语言模型少样本提示性能不足且成本高。本文提出多视角提示LLM-MvP，通过考虑多种元素排序并融合受限解码与批处理，显著提升方面级情感分析性能，达到与强微调基线相当的水平，同时降低部署成本，为特定任务的高效提示设计提供了有效方案。",
+      "llm_tldr": "面向情感分析，现有大语言模型少样本提示性能不足且成本高。本文提出多视角提示LLM-MvP，通过考虑多种元素排序并融合受限解码与批处理，显著提升方面级情感分析性能，达到与强微调基线相当的水平，同时降低部署成本，为特定任务的高效提示设计提供了有效方案。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "How to optimize prompts for specific downstream tasks like question answering?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.20254v1",
+      "source": "arxiv",
+      "title": "Efficient Table QA via TableGrid Navigation and Progressive Inference Prompting",
+      "abstract": "Large Language Models (LLMs) have shown promising results on NLP tasks, however, their performance on tabular data still needs research attention, because Table Question-Answering (TQA) requires precise cell retrieval and multi-step structured reasoning. Existing work improves TQA either by fine-tuning or training LLMs on task-specific tabular data, but often lacks verifiable control over how the model navigates tables and derives answers. In this work, we propose a training-free TQA approach with two structured prompting frameworks: TableGrid Navigation (TGN), which iteratively navigates rows and columns via a three-module loop to locate evidence and refine answers, and Progressive Inference Prompting (PIP), which enforces columns identification for explicit progressive row selection constraint according to the query. We evaluate 17 LLMs against 6 baselines on TableBench and FeTaQa dataset. On TableBench, TGN improves over the strongest baseline by 3.8 points, and on FeTaQa, PIP achieves SOTA performance over ReAct and Chain-of-Thought. Beyond inference-time gains, PIP and TGN can also serve as supervision templates to fine-tune small models, narrowing the performance gap to much larger architectures in resource-constrained settings, offering versatile and cost-efficient solution for TQA.",
+      "authors": [
+        "Amritansh Maurya",
+        "Navjot Singh",
+        "Mohammed Javed",
+        "Omar Moured"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-05-18T12:00:24+00:00",
+      "link": "https://arxiv.org/pdf/2605.20254v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Proposes structured prompting methods for efficient table question answering, a specific downstream task.",
+      "llm_evidence_cn": "为表格问答这一特定下游任务提出结构化提示方法。",
+      "llm_evidence": "为表格问答这一特定下游任务提出结构化提示方法。",
+      "canonical_evidence": "为表格问答这一特定下游任务提出结构化提示方法。",
+      "llm_tldr_en": "Introduces two training-free structured prompting frameworks, TableGrid Navigation and Progressive Inference Prompting, to enable precise cell retrieval and multi-step reasoning for table QA.",
+      "llm_tldr_cn": "针对表格问答中精确单元格检索和结构化推理的挑战，提出免训练的TableGrid导航与渐进推理提示方法，前者通过循环导航定位证据，后者强化列识别与推理步骤，提升了表格问答效率与可控性。",
+      "llm_tldr": "针对表格问答中精确单元格检索和结构化推理的挑战，提出免训练的TableGrid导航与渐进推理提示方法，前者通过循环导航定位证据，后者强化列识别与推理步骤，提升了表格问答效率与可控性。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "How to optimize prompts for specific downstream tasks like question answering?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}
