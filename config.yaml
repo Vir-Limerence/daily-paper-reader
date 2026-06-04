@@ -25,3 +25,52 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: prompt-opt
+      description: 研究提示词优化的相关论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: prompt optimization
+          keyword_cn: 提示词优化
+          query: techniques for optimizing prompts in language models
+        - keyword: prompt engineering
+          keyword_cn: 提示工程
+          query: best practices for designing effective prompts
+        - keyword: prompt tuning
+          keyword_cn: 提示调优
+          query: methods for fine-tuning prompts on downstream tasks
+        - keyword: instruction optimization
+          keyword_cn: 指令优化
+          query: optimizing natural language instructions for model performance
+        - keyword: automated prompt generation
+          keyword_cn: 自动化提示生成
+          query: automated search for optimal prompts
+      intent_queries:
+        - query: What are the latest techniques for automatic prompt optimization in large language models?
+          query_cn: 大型语言模型中自动提示词优化的最新技术有哪些？
+          enabled: true
+          source: manual
+          note: ''
+        - query: How to optimize prompts for specific downstream tasks like question answering?
+          query_cn: 如何针对问答等特定下游任务优化提示词？
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-04T06:55:29.760Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
