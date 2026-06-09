@@ -1,0 +1,252 @@
+Title: Operationalizing Linguistic Methods through Prompt-Engineering Skills: An Automatic Chinese Web Neologism Detection Pipeline
+
+URL Source: https://arxiv.org/pdf/2606.08715v1
+
+Published Time: Tue, 09 Jun 2026 01:42:38 GMT
+
+Number of Pages: 12
+
+Markdown Content:
+# Operationalizing Linguistic Methods through Prompt-Engineering Skills: An Automatic Chinese Web Neologism Detection Pipeline 
+
+Yufeng Wu 
+
+City University of Hong Kong 
+
+yufenwu2-c@my.cityu.edu.hk 
+
+Meichun Liu 
+
+City University of Hong Kong 
+
+Abstract 
+
+We present a method for automatic Chi-nese web neologism detection that op-erationalizes traditional linguistic identi-fication principles as prompt-engineering skills. The method has four stages: tokenizer-independent character n-gram candidate generation; dictionary anchor-ing with a Pointwise Mutual Information pre-filter; a well-formedness skill based on Chinese word-formation principles; and a combined rule and three-way classification skill that distinguishes neologism , en-tity , and none . Applied to the BAAI CCI 3.0 corpus (267M documents), the method produces 226,959 classified candi-dates including 4,853 labeled neologisms .To evaluate the method, we develop a per-stage conditional recall decomposition in which the pipeline’s strict recall factors mathematically into the product of stage conditional recalls. Applied to Hou (2023) (4,199 entries), the decomposition exposes Stage 1 candidate coverage and Stage 4B LLM semantic judgment as the two bottle-necks ( R=41 .5% and 60 .0% respectively), while intermediate stages are near-lossless. A length-stratified analysis further reveals that the structural well-formedness skill is length-invariant (≥ 96 .9%) whereas the semantic novelty-classification skill is length-dependent ( 65 .6%/59 .0%/44 .1%across 2/3/4-character candidates), map-ping a current boundary of skill-based lin-guistic operationalization. We release the method, pipeline outputs, and evaluation protocol as public resources. 
+
+1 Introduction 
+
+Chinese web neologisms, new words and ex-pressions emerging from online language use, pose a persistent challenge for computational lexicography. Their identification is linguis-tically rich: traditional Chinese linguistics provides well-developed accounts of word-formation principles and of the boundary be-tween novel coinages and pre-existing lexi-cal inventory. However, these accounts have largely remained descriptive , used by lexi-cographers and linguists to manually identify new words rather than to automatically detect them. Bridging this gap, turning descriptive linguistic knowledge into automatic detection procedures, has been a long-standing goal of Chinese NLP. Recent advances in large language models (LLMs) raise the possibility that linguistic identification knowledge can be operational-ized through prompts. Yet writing a prompt that says “judge whether this is a new word” is not the same as encoding linguistic identifi-cation principles in a reproducible form. In this paper we work within current prompt-engineering practice and treat each LLM-based classification stage as a skill (Anthropic, 2024): a structured LLM-task interface com-bining (a) explicit rule specifications grounded in linguistic principles, (b) representative pos-itive and negative examples, and (c) format constraints on the model output. The con-tribution of this paper is not to introduce the notion of skill, which is part of estab-lished prompt-engineering practice, but to in-vestigate how reliably linguistic identification knowledge can be operationalized through this paradigm, and where its boundaries lie. We develop a four-stage pipeline for Chinese web neologism detection from the BAAI CCI 3.0 corpus (267M documents). The pipeline narrows from tokenizer-independent charac-ter n-gram candidates, through dictionary-anchored and PMI-based pre-filtering, to two LLM skills: a structural well-formedness skill and a three-way semantic classification skill, plus a rule-based fragment filter. The final 
+
+> arXiv:2606.08715v1 [cs.CL] 7 Jun 2026
+
+output is 226,959 classified candidates with 4,853 labeled neologisms , released as a pub-lic resource. To evaluate the pipeline, we de-part from single-number recall reporting and develop a per-stage conditional recall decom-position : for each entry in the Hou (2023) ref-erence dictionary (4,199 entries), we trace its survival across all five pipeline stages, com-puting the conditional recall of each. The pipeline’s aggregate strict recall factors mathe-matically into the product of stage conditional recalls, allowing diagnostic comparison at the sub-pipeline level. We additionally decompose recall by candidate character length to reveal length-dependent patterns. The method’s diagnostic value is demon-strated by two findings on the Hou (2023) reference set. First, the per-stage decom-position exposes a bimodal bottleneck struc-ture: Stage 1 candidate coverage and Stage 4B LLM semantic classification together ac-count for 83.7% 1 of false negatives, while intermediate stages are near-lossless. Sec-ond, length-stratified diagnosis reveals a dis-sociation between two LLM skills running on the same model (Qwen3.5-27B-Q4_K_M): the structural well-formedness skill (Stage 3) is length-invariant, retaining 96.86%, 97.97%, and 100.00% of 2-, 3-, and 4-character Hou (2023) entries respectively, while the seman-tic three-way classification skill (Stage 4B) is length-dependent, retaining only 65.62%, 59.01%, and 44.14%. The same LLM, with comparable skill design effort, succeeds at structural word-formation judgment but de-grades on semantic novelty judgment as candi-date length increases. This dissociation, made visible by the method, maps a current bound-ary of skill-based operationalization of linguis-tic identification knowledge. 
+
+Contributions. This paper makes four methodological contributions: (1) a four-stage tokenizer-independent method for Chi-nese web neologism detection that opera-tionalizes linguistic identification principles as prompt-engineering skills, fully automatic and applicable to any large Chinese corpus; (2) a per-stage conditional recall evaluation proto-           
+
+> 1This is the joint figure (2,455+470)/3,495 =83.69%; the separately rounded component shares (70.2% and 13.4%) sum to 83.6%.
+
+col that decomposes pipeline recall into mul-tiplicative stage factors, enabling diagnostic comparison at the sub-pipeline level; (3) a public resource of 226,959 classified candidates from CCI 3.0, including 4,853 labeled neolo-gisms ; and (4) length-stratified diagnosis that, applied to our method, reveals a structural-vs-semantic skill boundary, observed for the first time at this granularity in Chinese neologism detection. 
+
+2 Related Work 
+
+Our work intersects two research strands: Chinese neologism detection (traditional and LLM-based) and prompt-engineering method-ology with per-stage pipeline evaluation. We review each in turn. 
+
+2.1 Chinese Neologism Detection and LLM-based Lexical Approaches 
+
+Chinese linguistic research has produced ex-tensive descriptive accounts of neologism for-mation and identification. Wu and Jiang (2000) and related work establish core word-formation principles, modification ( piānzhèng 
+
+偏 正 ), verb-object ( dòngbīn 动 宾 ), parallel (bìngliè 并 列 ), and affixation, that govern productive new-word creation in Chinese. Ji et al. (2006) develop character-position rules for filtering ill-formed Chinese n-gram frag-ments in the context of terminology extrac-tion, providing the linguistic basis for our Stage 4A rule chain. Feng et al. (2004) ad-dress the lexical boundary problem: which character sequences should be treated as new words versus pre-existing inventory. Compu-tational approaches to Chinese new word de-tection have evolved from rule-and-statistics hybrids to neural methods over the past two decades. Early work combined statistical sequence modeling with new-word boundary identification (Peng et al., 2004). Pretrained Chinese representations and transfer-learning segmentation models also improved lexical boundary modeling in adjacent Chinese NLP tasks (Sun et al., 2021; Huang et al., 2020). More recent task-specific work applies super-vised or semi-supervised detection to down-stream applications such as sentiment analysis (Huang et al., 2014). Domain-specific exten-sions target social media and microblog ver-nacular, where neologism density is highest. These approaches improve on rule-based recall but typically evaluate against small annotated test sets rather than against a comprehensive reference dictionary, and they generally do not separate structural well-formedness from se-mantic novelty, a distinction we make explicit through our two-skill design. These accounts are linguistically rich but re-main descriptive: they specify what consti-tutes a neologism without specifying an exe-cutable detection procedure. Our work takes these accounts as input and operationalizes them as LLM skills (Stages 3, 4B) plus rule-based and statistical filters (Stages 1, 2, 4A). Building on these traditional accounts, re-cent LLM-based approaches have begun au-tomating neologism detection. Recent work has applied LLMs to neolo-gism and novel lexeme detection. Most di-rectly comparable is Rossini and van der Plas (2026), who develop an English neologism de-tection pipeline using a multi-model LLM en-semble (Qwen 72B + Llama 70B + Mistral 123B + Claude Haiku verification) and evalu-ate on a 53-entry reference list. They report 37.7% strict recall and a 58.7% true-novelty rate among classified candidates. Rossini and van der Plas (2026) use a four-class scheme (neologism, entity, foreign, none); we adopt three of these—neologism, entity, and none— and omit the foreign class, which targets English-language social-media text and is not pertinent to our Chinese setting. The 59.97% strict conditional recall of our Stage 4B closely matches Rossini and van der Plas’s 58.7% across language and model configuration, sug-gesting a cross-lingual ceiling for current LLM-based neologism classification. For Chinese specifically, recent work has applied LLMs to lexicon expansion and new-term identifica-tion, often through prompt engineering or fine-tuning; however, we found no high-confidence prior work that evaluates Chinese neologism pipelines through per-stage conditional recall. These applications mostly target social media monitoring, trend tracking, or domain vocabu-lary discovery rather than systematic pipeline evaluation against a comprehensive reference dictionary. To our knowledge, no prior work diagnoses Chinese neologism pipelines through per-stage conditional recall against a reference list as comprehensive as Hou (2023). 
+
+2.2 Prompt Engineering and Per-stage Pipeline Evaluation 
+
+A growing literature characterizes how task in-structions shape LLM behavior (Sahoo et al., 2024; Schulhoff et al., 2024). Brown et al. (2020) establish few-shot prompting as a pri-mary mechanism for in-context task specifica-tion. Wei et al. (2022) show that chain-of-thought reasoning improves multi-step perfor-mance. Beyond ad-hoc prompts, structured LLM-task interfaces, variously termed skills 
+
+(Anthropic, 2024), instructions , or task speci-fications , combine rule descriptions, represen-tative examples, and format constraints to make LLM behavior more reproducible and auditable. Recent work has also developed structured output mechanisms for LLMs, in-cluding JSON-mode decoding, function call-ing, and constrained generation (Willard and Louf, 2023; Geng et al., 2025; Wang et al., 2025), which underlies the format-constraint component of our skill design. More broadly, the rapid growth of LLM evaluation bench-marks motivates reporting diagnostic stage-level behavior rather than a single aggregate score (Ni et al., 2025). Our work uses this paradigm: each LLM stage in the pipeline is a skill in this sense, with a fixed rule specifica-tion, a curated example set, and explicit out-put constraints. We do not introduce the no-tion of skill; our contribution is to investigate how reliably linguistic identification knowl-edge can be operationalized through it. This structured-task view connects natu-rally to per-stage evaluation, because each prompt-defined component can be audited as a separate pipeline stage. Pipeline error attribution is a long-standing concern in NLP. Component-wise evaluation has been used to diagnose machine transla-tion pipelines (Vilar et al., 2006) and pars-ing pipelines (Smith and Eisner, 2008), among others. Per-stage conditional recall, as we develop it here, applies this diagnostic phi-losophy specifically to neologism detection: by tracing the fate of each reference-list en-try through all pipeline stages and comput-ing each stage’s input-to-output retention, we make the multiplicative structure of aggregate recall explicit. This complements aggregate recall reporting, allowing methodological com-parisons at the stage level rather than at the pipeline level. 
+
+3 Methods 
+
+This section describes the four-stage pipeline. We first give an overview (§3.1) and then de-scribe each stage in turn: candidate gener-ation (§3.2), vocabulary anchoring and pre-filtering (§3.3), LLM well-formedness skill (§3.4), three-way classification (§3.5), output construction (§3.6), and evaluation methodol-ogy (§3.7). 
+
+3.1 Overview 
+
+We propose a four-stage pipeline for detect-ing Chinese web neologisms from large-scale corpora. The pipeline progressively nar-rows from raw character n-gram statistics through dictionary-anchored filtering, LLM-based well-formedness classification, and acombined rule-based and LLM-based three-way classification. We use a single open-source LLM (Qwen3.5-27B-Q4_K_M) throughout (Qwen Team, 2026). We organize the LLM components of the pipeline as prompt-engineering skills (Anthropic, 2024): struc-tured LLM-task interfaces consisting of (a) ex-plicit rule specifications grounded in linguistic principles, (b) representative positive and neg-ative examples, and (c) format constraints on the model output. This framing allows us to operationalize traditionally descriptive linguis-tic identification knowledge into reproducible, model-substitutable LLM tasks. We deploy two skills in the pipeline: a structural well-formedness skill (Stage 3) and a three-way se-mantic classification skill (Stage 4B). 
+
+3.2 Corpus and Candidate Generation (Stage 1) 
+
+We use the BAAI CCI 3.0 corpus, a curated Chinese web corpus of 267,655,159 documents. To avoid the lexical bias inherent in tokenizer-dependent pipelines, where a tokenizer’s built-in vocabulary pre-determines which character sequences can become word candidates, we ex-tract candidates directly via character n-gram counting without any word-level tokenization. We extract n-grams of lengths 2, 3, and 4, re-taining the top 400,000 by raw frequency for each length, yielding a candidate pool of 1.2 million entries. 
+
+3.3 Vocabulary Anchoring and Statistical Pre-filtering (Stage 2) 
+
+We anchor against the Modern Chinese Dic-tionary, 5th edition (XHC5, 2005): candi-dates appearing in XHC5 are removed, iso-lating items absent from the pre-2005 stan-dard lexicon. Wikipedia titles (965K entries) are recorded as an in_wiki flag for down-stream reference but not used to exclude can-didates, since many web neologisms ( nèijuǎn 
+
+内 卷 ’involution’, fáněrsài 凡 尔 赛 ’humble-bragging’) have Wikipedia entries. To con-trol downstream cost, we apply a Pointwise Mutual Information (PMI) pre-filter: PMI >2
+
+for 2-/3-character candidates, PMI 2 >4 for 4-character. We label this “PMI loose” and ac-knowledge it as a computational compromise; some cohesively-weak neologisms with nega-tive PMI ( shèsǐ 社 死 ’social death’, dāzi 搭子’companion’) are lost here. After Stage 2: 783,719 candidates. 
+
+3.4 LLM Well-formedness Skill (Stage 3) 
+
+The first LLM skill (Qwen3.5-27B-Q4_K_M, via llama.cpp) classifies each candidate as WELL_FORMED or FRAGMENT. The skill specifies Chinese word-formation principles, including modification ( piānzhèng 偏正 ), verb-object (dòngbīn 动 宾 ), parallel (bìngliè 并列), quadrisyllabic templates, and affixation, as the structural criterion, with representa-tive examples and a single-token output for-mat. Candidates satisfying word-formation rules are retained even when unrecognized by the LLM, ensuring structural rather than memory-based judgment. After Stage 3: 226,959 WELL_FORMED candidates. 
+
+3.5 Three-way Classification (Stage 4) 
+
+Stage 4 classifies each WELL_FORMED candidate into NEOLOGISM, ENTITY, or NONE through two components: a rule-based pre-filter (4A) and an LLM-based classifier (4B). 
+
+Stage 4A: Rule-based Pre-filtering. We apply five independent character-position rules (Table 1), each targeting a distinct sur-face pattern characteristic of NONE candi-dates. Each rule examines a single character position (initial or final) and matches against Stage 1 
+
+> Chargram extraction
+> top-400k (n=2,3,4)
+> 1.2M candidates
+> Stage 2
+> Vocabulary anchoring
+> XHC5 + PMI loose
+> 783,719
+> Stage 3
+> Well-formedness skill
+> LLM (Qwen3.5-27B)
+> 226,959
+> Stage 4A
+> Rule chain
+> R1-R5 character rules
+> → 33,676 NONE
+> Stage 4B
+> Three-way skill
+> LLM (Qwen3.5-27B)
+> 193,283 classified
+> Final output
+> NEO 4,853
+> ENT 21,119
+> NONE 200,987
+> 33,676 → NONE
+
+Figure 1: Four-stage pipeline for Chinese web neologism detection. Stage 3 and Stage 4B use LLM-based prompt-engineering skills (highlighted in blue). 
+
+a closed character list derived from the XHC5 character-frequency top-300 band. The R2 and R3 lists were extended with locative-temporal characters ( 中, 上, 下, 里,
+
+内, 外, 前, 后, 间, 时) and prepositional char-acters ( 在, 于, 把, 对, 向, 为, 以, 自, 由) based on prior work on Chinese garbage-string fil-tering (Ji et al., 2006). All character lists are validated against an internal target list of rep-resentative web neologisms. Stage 4A filters 33,676 candidates (14.84% of input) to NONE; the remaining 193,283 candidates pass to Stage 4B. 
+
+Stage 4B: Three-way Classification Skill. 
+
+The same Qwen3.5-27B-Q4_K_M applies a three-way classification skill to the 193,283 re-maining candidates. The skill specifies class definitions, representative examples (12 NE-OLOGISM, 10 ENTITY, 21 NONE), and seven decision rules: derivative forms remain NEOLOGISM; the in_wiki flag is reference-only; existing fixed expressions and domain terminology remain NONE; uncertainty de-faults to NONE. The LLM runs at temper-ature 0, single-pass. Of 193,283 candidates, parsing failed for 16 (0.008%) and were conser-vatively assigned NONE. Output: 4,853 NE-OLOGISM, 21,119 ENTITY, 167,311 NONE. 
+
+3.6 Final Output and Source Annotation 
+
+Stage 4A and Stage 4B outputs are merged into the final candidate set, with each candi-date annotated by its decision source (R1–R5 or LLM) to enable downstream interpretabil-ity and error analysis. 
+
+3.7 Evaluation Methodology 
+
+We evaluate against the New Chinese Words dictionary of Hou (2023), normalized to 4,199 unique entries (coverage 2000–2020). For each entry, we trace its survival across all five pipeline stages and compute the conditional recall Rk of stage k as the fraction of Hou (2023) entries entering k that survive. The pipeline’s overall strict recall equals the prod-uct R1 × R2 × R3 × R4A × R4B . We addi-tionally decompose recall by candidate char-acter length (2/3/4-char) to expose length-dependent bottlenecks. This decomposition provides a diagnostic framework rather than a single performance number. 
+
+4 Results 
+
+This section reports pipeline output statistics (§4.1) and the evaluation against Hou (2023): per-stage conditional recall (§4.2), recall de-composition by candidate length (§4.3), and the internal fate of Hou (2023) entries reach-ing Stage 4 (§4.4). 
+
+4.1 Pipeline Data Flow 
+
+Table 2 shows candidate counts at each pipeline stage. The final classification distribution is: NE-OLOGISM 4,853 (2.14%), ENTITY 21,119 (9.30%), NONE 200,987 (88.56%). The con-servative NEOLOGISM proportion reflects the design choice that uncertainty defaults to NONE. 
+
+4.2 Per-stage Conditional Recall 
+
+Table 3 reports the per-stage conditional recall of Hou (2023) entries through the pipeline. Multiplicative identity (verified to 12 deci-mal places): Table 1: Stage 4A rule chain configuration 
+
+Rule Position Pattern List size R1 initial function-word prefix 15 R2 final function-word / locative / temporal suffix 19 R3 initial negation / adverb / preposition prefix 22 R4 initial determiner prefix 6R5 initial sentence-cut verb head 4
+
+Table 2: Stage-by-stage candidate counts 
+
+Stage Operation Output Stage 1 character n-gram top-400k (lengths 2, 3, 4) 1,200,000 Stage 2 XHC5 anchor + PMI loose pre-filter 783,719 Stage 3 LLM well-formedness filter 226,959 Stage 4A rule-based NONE filter 33,676 → NONE Stage 4B LLM three-way classification 193,283 Final merged output 226,959 
+
+R1 × R2 × R3 × R4A × R4B = 0.4153 × 0.7030 × 0.9772 × 0.9800 × 0.5997 = 0.16766 = pipeline strict recall. Under the inclusive criterion (treating EN-TITY as acceptable lexical innovation), Stage 4B conditional recall rises to 807 / 1,174 = 68.74%, yielding inclusive pipeline recall of 19.22%. The decomposition reveals a bimodal pipeline: Stages 3 and 4A are near-lossless (R > 97%), Stage 2 is moderate (R = 70%), while Stages 1 and 4B are the two major recall bot-tlenecks (R = 41.5% and 60.0% respectively). Detailed false negative distribution by stage and component is provided in Appendix A. 2-char 3-char 4-char   
+
+> Candidate length
+> 0
+> 20
+> 40
+> 60
+> 80
+> 100
+> Conditional recall (%)
+> Rossini (2026): 58.7%
+> 96.9% 98.0% 100.0%
+> 65.6%
+> 59.0%
+> 44.1%
+> Stage 3
+> Stage 4B
+> Rossini (2026): 58.7%
+
+Figure 2: Conditional recall comparison between Stage 3 well-formedness skill (length-invariant) and Stage 4B three-way classification skill (length-dependent), across 2/3/4-character Hou (2023) en-tries. The dashed line indicates the 58.7% true-novelty rate reported by Rossini and van der Plas (2026) for English neologism detection. 
+
+4.3 Recall Decomposition by Candidate Length 
+
+The pipeline’s per-stage conditional recall varies systematically with candidate length. Appendix Table 5 reports the same per-stage decomposition broken down into 2-character, 3-character, and 4-character Hou (2023) en-tries (constituting 50.3%, 29.6%, and 15.6% of the reference list respectively). Note: 5+-character Hou (2023) entries (n=130) are excluded from candidate gener-ation at Stage 1 by design (character n-gram lengths 2–4 only); 1-character entries (n=61) are similarly out of scope. The by-length decomposition reveals three structural observations absent from the aggre-gate report: 2-character new words are bottlenecked at Stages 1 and 2. The Stage 1 top-400k thresh-old misses 43% of 2-char Hou (2023) entries, and Stage 2’s PMI loose filter further removes 42% of survivors. PMI as a cohesion measure is poorly suited to 2-character new words be-cause many genuine 2-char neologisms, par-ticularly those derived from sound symbolism, abbreviation, or weak co-occurrence patterns (e.g., shèsǐ 社死 ’social death’, dāzi 搭子 ’com-panion’), exhibit low PMI by construction. 3-character new words are bottlenecked overwhelmingly at Stage 1. Only 24.9% of 3-char Hou (2023) entries reach Stage 2; once they pass, Stages 2–4A retain >95% of them. Table 3: Per-stage conditional recall against Hou (2023), n = 4,199 
+
+Stage Entering Surviving Recall [95% Wilson CI] Stage 1: character n-gram extraction 4,199 1,744 41.53 [40.05, 43.03] Stage 2: XHC5 + PMI loose 1,744 1,226 70.30 [68.11, 72.40] Stage 3: LLM well-formedness skill 1,226 1,198 97.72 [96.72, 98.42] Stage 4A: rule pre-filter 1,198 1,174 98.00 [97.04, 98.65] Stage 4B: LLM 3-way skill (strict NEO) 1,174 704 59.97 [57.14, 62.73] Pipeline total 4,199 704 16.77 
+
+The 3-char Stage 1 bottleneck reflects that productive 3-character neologisms (X 化, X 性,X 感, V-N constructions) tend to occupy the moderate-frequency range that falls just out-side top-400k coverage. 4-character new words present a distinct pattern: they survive Stages 1–4A relatively well (Stage 3 retains 100%, Stage 4A re-tains 96.5%) but suffer the most severe drop at Stage 4B (44.1% strict recall). This re-flects the fundamental ambiguity at length 4 between novel coinages and the pre-existing inventory of four-character fixed expressions (chengyu, idiomatic compounds, technical terms). The contrast between Stage 3 (length-invariant: 96.86/97.97/100.00%) and Stage 4B (length-dependent: 65.62/59.01/44.14%) is methodologically informative. The Stage 4B decline is significant (Cochran–Armitage trend test, z = −5.54 , p = 2 .97 ×10 −8), as is the stage-by-length interaction between Stage 3 and Stage 4B (empirical-logit interaction, z =
+
+−2.67 , p = 0.00765 ). The same Qwen3.5-27B-Q4_K_M model is reliable when asked to perform structural word-formation judg-ment but degrades under semantic neologism judgment, with degradation correlating with length-specific lexical complexity. 
+
+4.4 Stage 4 Internal Diagnosis 
+
+Among the 1,198 Hou (2023) entries that sur-vive to Stage 4, Appendix Table 6 shows the internal classification fate. Among the 24 Stage 4A rule false rejections, affected entries include productive prefixed terms such as yǐfáng yǎnglǎo 以房养老 ’house-for-pension’ (R1 on initial 以), zìjiàyóu 自驾 游 ’self-drive tourism’ (R3 on initial 自), and zàixiàn jiàoyù 在 线 教 育 ’online educa-tion’ (R3 on initial 在). These are system-atic cases where productive Chinese word-formation overlaps with rule detection pat-terns. Among the 103 Stage 4B ENTITY classifi-cations, entries are predominantly composite terms denoting new policy regimes, products, or social phenomena (e.g., Bāxiàng Guīdìng 八项规定 ’Eight-Point Regulation’, Pīnduōduō 
+
+拼多多 ’e-commerce platform’, Hùgǎngtōng 沪港 通 ’Shanghai-Hong Kong Stock Connect’, 
+
+Huǒjiànjūn 火箭军 ’PLA Rocket Force’). Each is simultaneously a proper-noun-like designa-tion and a productively-coined new term, a category boundary that Rossini and van der Plas (2026) describe as “inherently fuzzy.” Among the 367 Stage 4B NONE misclassi-fications, the genuine LLM errors, examples include xuānguàn 宣贯 ’promulgation and im-plementation’, xiǎo xīnsi 小心思 ’little inten-tions’, tuìgǔ 退股 ’stock withdrawal’, chūnzhāo 
+
+春 招 ’spring recruitment’, gōngzūfáng 公 租 房 ’public rental housing’, chùkòngpíng 触控 屏 ’touchscreen’, miànqiān 面 签 ’in-person signing’. These represent the residual semantic ambiguity that remains after rule-based and dictionary-based pre-filtering. 
+
+5 Discussion 
+
+This section interprets the evaluation results. We first discuss what the pipeline’s aggregate recall does and does not say (§5.1), then exam-ine the two bottleneck stages (§5.2), then turn to the length-dependent structure of pipeline errors (§5.3) as our principal finding, and fi-nally draw methodological implications for fu-ture pipeline design (§5.4). Limitations are discussed separately in Section 6. 5.1 What This Pipeline’s Recall Tells Us 
+
+The pipeline’s strict recall against Hou (2023) is 16.77%, lower than the 37.7% reported by Rossini and van der Plas (2026) for English. However, direct comparison is not meaning-ful: Rossini and van der Plas’s evaluation uses a curated 53-entry reference list, whereas Hou (2023) contains 4,199 entries including a long tail of low-frequency expressions. More fun-damentally, a single aggregate recall number conflates loss across five sequential filtering stages of very different fidelity. The per-stage decomposition (Table 3) is the principal contribution of our evaluation. It reveals three near-lossless stages: Stages 3, 4A, and (to a lesser extent) Stage 2 retain >70% of their input each, with Stages 3 and 4A retain-ing >97%. Combined recall loss across Stages 2–4A is only 16.3% of total FN. It also reveals two bottleneck stages: Stage 1 retains only 41.5% of Hou (2023) entries, and Stage 4B’s strict NEOLOGISM classification retains only 60.0% of its input. These two stages account for 83.7% of all false negatives. This decomposition reframes the evaluation: the question is no longer “is our pipeline good or bad?” but “where in the pipeline does recall actually leak, and why?” 
+
+5.2 Two Bottlenecks of Very Different Natures 
+
+The Stage 1 bottleneck is fundamentally about candidate pool coverage. Of the 4,199 Hou (2023) entries, 2,264 (54%) fall below the top-400k frequency threshold in CCI 3.0; aseparate 191 lie outside the 2–4-character candidate-generation scope. Stage 1 thus ac-counts for 2,455 (58.5%) of all reference en-tries lost. This reflects a property of the new-word distribution itself: by definition, new words are not yet widespread, and many re-main rare even in large web corpora. Re-covering them requires either a larger candi-date pool (which would multiply downstream LLM compute proportionally) or candidate-generation strategies orthogonal to raw fre-quency, such as productivity-based extraction or domain-specific corpus augmentation. The Stage 4B bottleneck is about LLM se-mantic judgment of neologism status. The 59.97% strict conditional recall is remarkably close to the 58.7% true-novelty rate reported by Rossini and van der Plas (2026) for En-glish neologism detection using a multi-model ensemble (Qwen 72B + Llama 70B + Mistral 123B + Claude Haiku verification). The cross-linguistic and cross-configuration convergence near 60% suggests this number may reflect a current ceiling for LLM-based neologism clas-sification rather than a Chinese-specific or single-model limitation. The boundary cases driving Stage 4B errors are themselves theoretically ambiguous. V+N constructions (e.g., tāfáng 塌房 ’idol collapse’ vs. xǐwǎn 洗碗 ’wash dishes’) are character-pattern-identical to common verb-object ex-pressions; ENTITY-NEOLOGISM dual des-ignations (Pīnduōduō 拼 多 多 ’e-commerce platform’, Hùgǎngtōng 沪 港 通 ’Shanghai-Hong Kong Stock Connect’, Huǒjiànjūn 火箭 军 ’PLA Rocket Force’) resist clean categori-cal assignment; and domain terms ( chūnzhāo 
+
+春招 ’spring recruitment’, gāosòngzhuǎn 高送 转 ’high stock dividend’) sit at the disciplinary boundary of which fields’ technical vocabular-ies count as “general” Chinese. 
+
+5.3 The Length-Dependent Structure of Pipeline Errors 
+
+The by-length decomposition (Appendix Ta-ble 5 and Figure 2) shows that recall bottle-necks are length-specific rather than uniform: 2-character entries are bottlenecked at Stages 1–2 (long-tail frequency and low PMI of 2-char neologisms), 3-character entries primarily at Stage 1 (top-400k coverage), and 4-character entries at Stage 4B alone (44.1% strict re-call, the lowest at any stage-length combina-tion). The contrast between Stage 3 (length-invariant: 96.86/97.97/100.00%) and Stage 4B (length-dependent: 65.62/59.01/44.14%) run-ning on the same Qwen3.5-27B-Q4_K_M is methodologically informative. The Stage 4B length trend is significant ( z = −5.54 , p =2.97 ×10 −8), and the stage-by-length interac-tion is also significant (z = −2.67 , p =0.00765 ). The model is reliable at structural word-formation judgment but degrades at se-mantic novelty judgment as length increases. We summarize this as: a structural well-formedness skill is length-invariant in its op-erationalization, whereas a semantic novelty-classification skill is length-dependent and de-grades sharply on longer candidates. This dis-sociation, observed through our method’s per-stage decomposition, maps the current bound-ary of skill-based operationalization of linguis-tic identification knowledge. 
+
+5.4 Methodological Implications 
+
+Three implications follow. First, mid-stages (Stages 2–4A) are not the bottleneck; invest-ment in alternative dictionary anchors, PMI thresholds, or well-formedness criteria cannot improve aggregate recall by more than a few percentage points. Second, Stage 1 expansion has a clear cost-benefit calculus: doubling the candidate pool to top-1M would 2.5× down-stream LLM compute but could recover an es-timated 1,000–1,500 additional Hou (2023) en-tries, raising pipeline recall to roughly 36–38%. Third, Stage 4B improvement may require fundamentally different approaches: multi-model ensembles did not exceed the ∼60 %ceiling, suggesting retrieval-augmented LLM judgment, neologism-specific fine-tuning, or hybrid human-in-the-loop designs as produc-tive alternatives. More broadly, this points to an open question for skill-based operational-ization: which categories of linguistic judg-ment can be reliably encoded as LLM skills with current prompt-engineering practice, and which require alternative paradigms. Per-stage and per-length conditional recall should complement aggregate recall as evalu-ation criteria for pipeline-style methods. 
+
+6 Limitations 
+
+We acknowledge several limitations of this work. 
+
+Statistical pre-filter design cost. The PMI loose pre-filter in Stage 2 is a computa-tional compromise that loses cohesively-weak neologisms with negative PMI, including shèsǐ 
+
+社死 ’social death’ and dāzi 搭子 ’companion’. This is documented in our per-length analy-sis (Table 5) but not corrected; alternative co-hesion measures for 2-character Chinese neol-ogisms remain an open problem. Similarly, Stage 1’s top-400k frequency threshold ex-cludes 54% of Hou (2023) entries that fall in the low-frequency long tail, a fundamental property of neologism distributions in web cor-pora. 
+
+Dictionary anchor coverage. The XHC5 anchor (2005) is a single dictionary snapshot. Some domain-specific lexical items predating 2005 but not included in XHC5 may be incor-rectly accepted as candidates and surface in our final output. Conversely, some Hou (2023) entries that XHC5 happens to contain are ex-cluded at Stage 2 (42 entries in our trace). 
+
+Reference list biases. The Hou (2023) ref-erence list, while the most comprehensive Chi-nese neologism dictionary publicly available, has its own selection biases: it favors words at-tested in mainstream media, may underrepre-sent purely online vernacular, and reflects edi-torial choices about which expressions qualify as “new words.” Our recall numbers are there-fore relative to this specific reference frame and may not generalize to all neologism def-initions. 
+
+No precision evaluation. Our evaluation reports recall against Hou (2023) but does not include precision measurement against hu-man annotation of our pipeline’s 4,853 neolo-gism outputs. Whether our pipeline’s positive predictions are themselves neologisms, rather than false positives, remains to be measured in future work, ideally through stratified human annotation with inter-annotator agreement. 
+
+Single LLM and reproducibility. We use a single open-source model (Qwen3.5-27B-Q4_K_M) at temperature 0 for both LLM skills. While temperature 0 reduces stochas-ticity, the specific weight quantization and in-ference engine (llama.cpp) may affect repro-ducibility for readers using different runtime configurations. Our released outputs are de-terministic relative to our exact runtime setup. 
+
+7 Conclusion 
+
+We presented a method for automatic Chi-nese web neologism detection that operational-izes traditional linguistic identification princi-ples as prompt-engineering skills, combining tokenizer-independent character n-gram can-didate generation, dictionary anchoring, sta-tistical pre-filtering, a well-formedness skill, and a rule-plus-classification stage. Ap-plied to CCI 3.0 and evaluated against Hou (2023), the method enables per-stage condi-tional recall decomposition that exposes bot-tleneck structure rather than collapsing it into a single number. The decomposition re-veals two bottleneck stages (candidate cover-age and LLM semantic classification) and a length-dependent dissociation between struc-tural and semantic LLM skills running on the same model, a boundary made visible by the method’s multiplicative recall struc-ture. We release 226,959 classified candidates, the rule specifications, the skill prompts, and the per-stage evaluation protocol as public re-sources. Future work should explore alter-native candidate generation strategies beyond raw frequency, and LLM-based semantic nov-elty judgment paradigms beyond conventional skill design. 
+
+References 
+
+Anthropic. 2024. Claude skills documentation. Accessed 2026-06-03. Tom B. Brown, Benjamin Mann, Nick Ry-der, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agar-wal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu, Clemens Win-ter, and 12 others. 2020. Language models are few-shot learners. In Advances in Neural In-formation Processing Systems , volume 33, pages 1877–1901. Haodi Feng, Kang Chen, Xiaotie Deng, and Weimin Zheng. 2004. Accessor variety criteria for chinese word extraction. Computational Lin-guistics , 30(1):75–93. Saibo Geng, Hudson Cooper, Michał Moskal, Samuel Jenkins, Julian Berman, Nathan Ranchin, Robert West, Eric Horvitz, and Har-sha Nori. 2025. JSONSchemaBench: A rigorous benchmark of structured outputs for language models. Preprint , arXiv:2501.10868. Min Hou. 2023. A Dictionary of New Chinese Words (2000–2020) . The Commercial Press, Beijing. In Chinese. Kaiyu Huang, Degen Huang, Zhuang Liu, and Fen-gran Mo. 2020. A joint multiple criteria model in transfer learning for cross-domain chinese word segmentation. In Proceedings of EMNLP 2020 ,pages 3873–3882. Minlie Huang, Bo Ye, Yichen Wang, Haiqiang Chen, Junjun Cheng, and Xiaoyan Zhu. 2014. New word detection for sentiment analysis. In 
+
+Proceedings of ACL 2014 , pages 531–541. Luning Ji, Qin Lu, Wenjie Li, and Yirong Chen. 2006. A comparative study of the effect of word segmentation on chinese terminology extraction. In Proceedings of the 20th Pacific Asia Confer-ence on Language, Information and Computa-tion , pages 101–108, Huazhong Normal Univer-sity, Wuhan, China. Tsinghua University Press. Shiwen Ni, Guhong Chen, Shuaimin Li, Xua-nang Chen, Siyi Li, Bingli Wang, Qiyao Wang, Xingjian Wang, Yifan Zhang, Liyang Fan, Chengming Li, Ruifeng Xu, Le Sun, and Min Yang. 2025. A survey on large language model benchmarks. Preprint , arXiv:2508.15361. Fuchun Peng, Fangfang Feng, and Andrew McCal-lum. 2004. Chinese segmentation and new word detection using conditional random fields. In 
+
+Proceedings of COLING 2004 .Qwen Team. 2026. Qwen3.5-27b. Hugging Face model card, model version Qwen/Qwen3.5-27B; accessed 2026-06-07. Diego Rossini and Lonneke van der Plas. 2026. From 124 million tokens to 1,021 neologisms: A large-scale pipeline for automatic neologism de-tection. Preprint , arXiv:2605.06426. Pranab Sahoo, Ayush Kumar Singh, Sriparna Saha, Vinija Jain, Samrat Mondal, and Aman Chadha. 2024. A systematic survey of prompt engineering in large language mod-els: Techniques and applications. Preprint ,arXiv:2402.07927. Sander Schulhoff, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si, Yinheng Li, Aayush Gupta, HyoJung Han, Sevien Schulhoff, Pranav Sandeep Dulepet, Saurav Vidyadhara, Dayeon Ki, Sweta Agrawal, Chau Pham, Gerson Kroiz, Feileen Li, Hud-son Tao, Ashay Srivastava, and 12 others. 2024. The prompt report: A systematic sur-vey of prompt engineering techniques. Preprint ,arXiv:2406.06608. David A. Smith and Jason Eisner. 2008. Depen-dency parsing by belief propagation. In Proceed-ings of EMNLP 2008 , pages 145–156. Zijun Sun, Xiaoya Li, Xiaofei Sun, Yuxian Meng, Xiang Ao, Qing He, Fei Wu, and Jiwei Li. 2021. Chinesebert: Chinese pretraining enhanced by glyph and pinyin information. In Proceedings of ACL-IJCNLP 2021 , pages 2065–2075. David Vilar, Jia Xu, Luis Fernando D’Haro, and Hermann Ney. 2006. Error analysis of statistical machine translation output. In Proceedings of LREC 2006 , pages 697–702. Darren Yow-Bang Wang, Zhengyuan Shen, Soumya Smruti Mishra, Zhichao Xu, Yifei Teng, and Haibo Ding. 2025. SLOT: Struc-turing the output of large language models. 
+
+Preprint , arXiv:2505.04016. Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, and Denny Zhou. 2022. Chain-of-thought prompting elicits reasoning in large lan-guage models. In Advances in Neural Infor-mation Processing Systems , volume 35, pages 24824–24837. Brandon T. Willard and Rémi Louf. 2023. Effi-cient guided generation for large language mod-els. Preprint , arXiv:2307.09702. Andi Wu and Zixin Jiang. 2000. Statistically-enhanced new word identification in a rule-based chinese system. In Proceedings of the Second Chinese Language Processing Workshop , pages 46–51. 
+
+A Stage-level Loss Components 
+
+Among the 3,495 strict false negatives, Stage 1 contributes 70.2% (2,455 entries, almost en-tirely from the top-400k frequency limit); Stage 4B contributes 13.4% (470 entries); Stages 2–4A combined contribute only 16.3%. Detailed component breakdown is in Table 4. 
+
+B Length and Stage 4 Diagnostics Table 4: False negative distribution by stage and component (total FN = 3,495) 
+
+Stage Component Count % of Total FN Stage 1 length coverage limit 191 5.5% Stage 1 top-400k frequency limit 2,264 64.8% Stage 2 early pre-filter 126 3.6% Stage 2 XHC5 anchor 42 1.2% Stage 2 PMI loose 350 10.0% Stage 3 LLM FRAGMENT misclassification 28 0.8% Stage 4A rule false rejection 24 0.7% Stage 4B ENTITY (strict criterion) 103 2.9% Stage 4B NONE misclassification 367 10.5% Total 3,495 100.0% 
+
+> Table 5: Per-stage conditional recall by candidate length
+
+Stage 2-char (n=2,110) 3-char (n=1,245) 4-char (n=653) Stage 1: character n-gram 56.87 [54.75, 58.97] 24.90 [22.58, 27.38] 35.83 [32.25, 39.59] Stage 2: XHC5 + PMI 58.42 [55.61, 61.17] 95.16 [92.17, 97.05] 98.29 [95.69, 99.33] Stage 3: LLM well-formedness skill 96.86 [95.29, 97.92] 97.97 [95.63, 99.06] 100.00 [98.36, 100.00] Stage 4A: rule pre-filter 98.53 [97.31, 99.20] 97.92 [95.55, 99.05] 96.52 [93.29, 98.23] Stage 4B: LLM 3-way skill (strict NEO) 65.62 [61.94, 69.12] 59.01 [53.20, 64.58] 44.14 [37.77, 50.72] Pipeline strict recall 20.81% 13.41% 15.01% 
+
+> Table 6: Stage 4 internal classification on Hou (2023) entries reaching Stage 4 (n = 1,198)
+
+Status Count Share Correct NEOLOGISM (strict TP) 704 58.8% ENTITY (lexical innovation) 103 8.6% Stage 4A rule false rejection 24 2.0% Stage 4B NONE misclassification 367 30.6%

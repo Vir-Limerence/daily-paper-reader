@@ -1,0 +1,281 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-09T20:48:01.413168+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2606.07894v1",
+      "source": "arxiv",
+      "title": "DD-GEPA: Prompt Optimization for Dialogue Disentanglement Focusing on Task Instruction and Utterance Representation",
+      "abstract": "Multi-party chat often contains interleaved dialogues because multiple participants can discuss different topics at the same time. Dialogue disentanglement addresses this problem by separating an entangled utterance sequence into coherent dialogues. While large language models (LLMs) are promising for this task, they still struggle with dialogue disentanglement and achieve low accuracy. This paper proposes an automatic prompt optimization for LLM based dialogue disentanglement. We decompose the prompt into three components: task instruction, utterance representation, and output instruction, and optimize them using GEPA, an optimization method for compound AI systems. Experiments on benchmark datasets show that the optimized prompts improve dialogue disentanglement accuracy over the original prompts and can surpass hand crafted prompts.",
+      "authors": [
+        "Naoki Takada",
+        "Tatsunori Mori"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-06-05T23:08:02+00:00",
+      "link": "https://arxiv.org/pdf/2606.07894v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "automatic prompt optimization for dialogue disentanglement using GEPA, decomposing and optimizing prompt components",
+      "llm_evidence_cn": "使用GEPA自动优化对话解缠的提示组件，分解并优化提示",
+      "llm_evidence": "使用GEPA自动优化对话解缠的提示组件，分解并优化提示",
+      "canonical_evidence": "使用GEPA自动优化对话解缠的提示组件，分解并优化提示",
+      "llm_tldr_en": "DD-GEPA decomposes the prompt into task instruction, utterance representation, and output instruction, then uses GEPA to automatically optimize them, greatly improving LLM accuracy on dialogue disentanglement benchmarks.",
+      "llm_tldr_cn": "DD-GEPA针对多轮对话中纠缠话题分离的任务，将提示分解为任务指令、话语表示和输出指令三个组件，并采用适用于复合AI系统的优化方法GEPA进行自动优化。在标准基准数据集上的实验显示，优化后的提示大幅提升了LLM在对话解缠任务上的准确率，证明了组件级自动提示优化的有效性。",
+      "llm_tldr": "DD-GEPA针对多轮对话中纠缠话题分离的任务，将提示分解为任务指令、话语表示和输出指令三个组件，并采用适用于复合AI系统的优化方法GEPA进行自动优化。在标准基准数据集上的实验显示，优化后的提示大幅提升了LLM在对话解缠任务上的准确率，证明了组件级自动提示优化的有效性。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.06698v2",
+      "source": "arxiv",
+      "title": "RECAP: Regression Evaluation for Continual Adaptation of Prompts",
+      "abstract": "Production agentic systems routinely face evolving constraints and must comply from the very next interaction. Scenarios like a tool-call notification changing a compliance threshold or a policy update adding disclosure requirements fit this criteria, having close to no room for errors in production. This proactive adaptation setting is common in deployment, but absent from current benchmarks, which assume either static constraint sets or reactive protocols with evaluation feedback. We introduce RECAP, a benchmark that measures continual-learning phenomena (forgetting, regression, forward transfer) at the constraint level under a strictly proactive adapt-then-test protocol: prompt optimization methods receive only the constraint specification and must generalize before seeing any test data. Evaluating six methods across four LLMs and three schedules with evolving constraints, we find that these methods show no significant improvement in performance, even after incurring a higher latency. These methods, designed for offline or reactive settings, are inadequate for the proactive paradigm. Our work emphasizes the growing need for designing proactive prompt adaptation methods, where the models must remain robust to evolving needs in deployment.",
+      "authors": [
+        "Harsh Deshpande",
+        "Kushal Chawla",
+        "Sangwoo Cho",
+        "William Campbell"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-06-04T20:35:15+00:00",
+      "link": "https://arxiv.org/pdf/2606.06698v2",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Evaluates prompt optimization methods under continual adaptation with proactive adapt-then-test protocol",
+      "llm_evidence_cn": "在主动适应-测试协议下评估持续适应中的提示优化方法",
+      "llm_evidence": "在主动适应-测试协议下评估持续适应中的提示优化方法",
+      "canonical_evidence": "在主动适应-测试协议下评估持续适应中的提示优化方法",
+      "llm_tldr_en": "RECAP introduces a benchmark for continual adaptation of prompts in production agentic systems, measuring forgetting, regression, and forward transfer under a proactive adapt-then-test protocol, enabling robust evaluation of prompt optimization methods.",
+      "llm_tldr_cn": "针对生产智能体系统面临持续变化约束需主动调整提示的挑战，该工作提出了RECAP基准，在主动适应-测试协议下量化提示优化方法的遗忘、倒退和正向迁移现象，为持续提示适应提供严格评估。实验覆盖多种提示优化方法，揭示了现有方法在主动适应场景下的不足。",
+      "llm_tldr": "针对生产智能体系统面临持续变化约束需主动调整提示的挑战，该工作提出了RECAP基准，在主动适应-测试协议下量化提示优化方法的遗忘、倒退和正向迁移现象，为持续提示适应提供严格评估。实验覆盖多种提示优化方法，揭示了现有方法在主动适应场景下的不足。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "techniques for optimizing prompts in language models",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.08348v1",
+      "source": "arxiv",
+      "title": "Bayesian-Agent: Posterior-Guided Skill Evolution for LLM Agent Harnesses",
+      "abstract": "LLM agents increasingly rely on external inference conditions: prompts, tools, memory, SOPs, skills, and harness feedback. These assets can improve task execution without changing model weights, but they are often revised by heuristic reflection or by reusing observed successes and failures as if counts alone were reliable belief. We introduce \\textbf{Bayesian-Agent}, a native and cross-harness framework that treats reusable skills and SOPs as hypotheses about whether a frozen model will succeed under a particular prompt, context, and harness environment. Bayesian-Agent records verified trajectory evidence, maintains a feature-conditioned categorical posterior over each skill, and maps posterior state into inspectable actions such as patch, split, compress, retire, and explore. Model-facing prompts receive executable guardrails and failure-mode patches, while posterior summaries remain available for audit. With \\texttt{deepseek-v4-flash}, incremental repair improves SOP-Bench from 80\\% to 95\\%, Lifelong AgentBench from 90\\% to 100\\%, and RealFin-Bench from 45\\% to 65\\%. We further evaluate Bayesian-Agent's native backend and optional GenericAgent, mini-swe-agent, and Claude Code backends. The results include positive, negative, saturated, and case-study settings, suggesting that agent skill evolution is best viewed as posterior-guided harness optimization rather than uncalibrated prompt accumulation. The source code is available at https://github.com/DataArcTech/Bayesian-Agent.",
+      "authors": [
+        "Xiaojun Wu",
+        "Cehao Yang",
+        "Honghao Liu",
+        "Xueyuan Lin",
+        "Wenjie Zhang",
+        "Zhichao Shi",
+        "Xuhui Jiang",
+        "Chengjin Xu",
+        "Jia Li",
+        "Jian Guo"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-06T21:40:19+00:00",
+      "link": "https://arxiv.org/pdf/2606.08348v1",
+      "tags": [
+        "keyword:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Bayesian framework for automated prompt and skill optimization in LLM agents",
+      "llm_evidence_cn": "贝叶斯框架自动优化LLM智能体中的提示与技能",
+      "llm_evidence": "贝叶斯框架自动优化LLM智能体中的提示与技能",
+      "canonical_evidence": "贝叶斯框架自动优化LLM智能体中的提示与技能",
+      "llm_tldr_en": "Introduces Bayesian-Agent, which treats prompts and skills as hypotheses and uses Bayesian updating to evolve them based on task evidence, enabling automated optimization without model retraining.",
+      "llm_tldr_cn": "LLM智能体依赖提示、技能等外部条件，但现有修订多基于启发式方法。本文提出贝叶斯智能体框架，将可复用技能和标准操作程序视为假设，通过记录轨迹证据并维护特征条件分类后验，将后验状态映射为补丁、拆分、组合等可检查动作，自动优化提示与技能。实验表明，该方法能有效提升智能体任务执行能力，实现了无需模型更新的自动化提示优化，为提示工程提供了新范式。",
+      "llm_tldr": "LLM智能体依赖提示、技能等外部条件，但现有修订多基于启发式方法。本文提出贝叶斯智能体框架，将可复用技能和标准操作程序视为假设，通过记录轨迹证据并维护特征条件分类后验，将后验状态映射为补丁、拆分、组合等可检查动作，自动优化提示与技能。实验表明，该方法能有效提升智能体任务执行能力，实现了无需模型更新的自动化提示优化，为提示工程提供了新范式。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "automated search for optimal prompts",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.09334v1",
+      "source": "arxiv",
+      "title": "How Far Can Prompting Go for Minimal-Edit Ukrainian Grammatical Error Correction?",
+      "abstract": "Fine-tuned Large Language Models (LLMs) dominate in Ukrainian grammatical error correction (GEC), while API-accessed LLMs remain nearly untested on minimal-edit benchmarks. We evaluate 11 commercial LLMs from four providers and one open-source Ukrainian model on the UNLP 2023 GEC-only benchmark, comparing zero-shot, few-shot, minimal-edits, and LLM-assisted prompt optimization strategies. Our best configuration (Gemini 3.1-Pro) reaches F0.5=69.22, closing over 90% of the gap to fine-tuned SOTA (F0.5=73.14). For zero-shot prompts, only Claude models benefit from Ukrainian instructions. However, the best overall results for all models use Ukrainian minimal-edits prompts, whose language-specific rules require Ukrainian to express precisely. LLM-assisted prompt optimization on top of minimal-edits + few-shot achieves the highest score. Detailed minimal-edits instructions yield the largest gains for punctuation and case errors but cause the model to abandon several low-frequency categories. Delving into error analysis, we identify five recurring overcorrection patterns tied to Ukrainian-specific linguistic phenomena. Code, prompts, and outputs are publicly available.",
+      "authors": [
+        "Kateryna Karpo",
+        "Artem Chernodub"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-08T11:00:56+00:00",
+      "link": "https://arxiv.org/pdf/2606.09334v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Evaluates zero-shot, few-shot, minimal-edits, and LLM-assisted prompt optimization for Ukrainian GEC",
+      "llm_evidence_cn": "针对乌克兰语语法纠错，评估了零样本、少样本、最小编辑和LLM辅助的提示优化策略",
+      "llm_evidence": "针对乌克兰语语法纠错，评估了零样本、少样本、最小编辑和LLM辅助的提示优化策略",
+      "canonical_evidence": "针对乌克兰语语法纠错，评估了零样本、少样本、最小编辑和LLM辅助的提示优化策略",
+      "llm_tldr_en": "This paper systematically compares prompt optimization strategies for Ukrainian grammatical error correction using 11 commercial LLMs, finding that LLM-assisted optimization with minimal-edits achieves 90% of the fine-tuned SOTA gap, demonstrating prompt engineering for low-resource downstream tasks.",
+      "llm_tldr_cn": "针对乌克兰语最小编辑语法纠错任务，系统比较了包括零样本、少样本、最小编辑规则和LLM辅助提示优化在内的多种提示策略，发现LLM辅助优化结合乌克兰语最小编辑提示能显著提升性能，Gemini 3.1-Pro模型达到69.22 F0.5，缩小了与微调方法90%以上的差距。该工作展示了提示工程在低资源语言任务中的有效性。",
+      "llm_tldr": "针对乌克兰语最小编辑语法纠错任务，系统比较了包括零样本、少样本、最小编辑规则和LLM辅助提示优化在内的多种提示策略，发现LLM辅助优化结合乌克兰语最小编辑提示能显著提升性能，Gemini 3.1-Pro模型达到69.22 F0.5，缩小了与微调方法90%以上的差距。该工作展示了提示工程在低资源语言任务中的有效性。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "How to optimize prompts for specific downstream tasks like question answering?",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.05804v1",
+      "source": "arxiv",
+      "title": "Can LLMs Be Constrained to the Past? Improving Knowledge Cutoff through Recall-Based Prompting",
+      "abstract": "Prompted knowledge cutoff instructs a large language model (LLM) to act as if information beyond a specified cutoff date were unavailable. However, prior work mainly relies on direct-answer generation, which struggles when post-cutoff knowledge is not explicitly queried but is only causally related to the question. To address this limitation, we propose two recall-based prompting strategies: Self-Recall (SR), which asks the model to restate its cutoff constraint, and Question-Recall (QR), which requires the model to recall question-relevant information valid under the cutoff. Across three existing benchmarks, our methods outperform both direct-answer prompting and conventional step-by-step reasoning baselines, with particularly strong improvements on counterfactual questions. To investigate robustness across different cutoff settings, we further construct the Multi-cutoff Historical Event Benchmark (MHEB), which evaluates the same question under multiple cutoff years. Results show that knowledge cutoff performance varies with cutoff distance, while combining SR and QR consistently yields the best performance.",
+      "authors": [
+        "Michiro Asai",
+        "Ailiang Lin",
+        "Yu Kishimoto",
+        "Takao Obi",
+        "Satoshi Kosugi",
+        "Kotaro Funakoshi",
+        "Manabu Okumura"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-04T07:33:56+00:00",
+      "link": "https://arxiv.org/pdf/2606.05804v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "proposes recall-based prompting strategies to improve knowledge cutoff compliance",
+      "llm_evidence_cn": "提出基于回忆的提示策略以改进知识截止遵守性",
+      "llm_evidence": "提出基于回忆的提示策略以改进知识截止遵守性",
+      "canonical_evidence": "提出基于回忆的提示策略以改进知识截止遵守性",
+      "llm_tldr_en": "Proposes Self-Recall and Question-Recall prompting methods that ask LLMs to restate constraints or recall pre-cutoff information, outperforming direct-answer and reasoning baselines on knowledge cutoff benchmarks.",
+      "llm_tldr_cn": "现有提示知识截止主要依赖直接生成，当后截止知识未被显式询问但因果相关时效果不佳。本文提出两种基于回忆的提示策略：自回忆（SR）要求模型重述截止约束，问题回忆（QR）要求模型回忆截止前有效信息。在三个基准上，这些方法优于直接提示和传统逐步推理基线，尤其在不完全因果遮蔽的Harder-Ctrl设置中优势显著，证明了将约束内化为模型自身推理过程的提示设计价值。",
+      "llm_tldr": "现有提示知识截止主要依赖直接生成，当后截止知识未被显式询问但因果相关时效果不佳。本文提出两种基于回忆的提示策略：自回忆（SR）要求模型重述截止约束，问题回忆（QR）要求模型回忆截止前有效信息。在三个基准上，这些方法优于直接提示和传统逐步推理基线，尤其在不完全因果遮蔽的Harder-Ctrl设置中优势显著，证明了将约束内化为模型自身推理过程的提示设计价值。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "best practices for designing effective prompts",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.06698v1",
+      "source": "arxiv",
+      "title": "RECAP: Regression Evaluation for Continual Adaptation of Prompts",
+      "abstract": "Production agentic systems routinely face evolving constraints and must comply from the very next interaction. Scenarios like a tool-call notification changing a compliance threshold or a policy update adding disclosure requirements fit this criteria, having close to no room for errors in production. This proactive adaptation setting is common in deployment, but absent from current benchmarks, which assume either static constraint sets or reactive protocols with evaluation feedback. We introduce RECAP, a benchmark that measures continual-learning phenomena (forgetting, regression, forward transfer) at the constraint level under a strictly proactive adapt-then-test protocol: prompt optimization methods receive only the constraint specification and must generalize before seeing any test data. Evaluating six methods across four LLMs and three schedules with evolving constraints, we find that these methods show no significant improvement in performance, even after incurring a higher latency. These methods, designed for offline or reactive settings, are inadequate for the proactive paradigm. Our work emphasizes the growing need for designing proactive prompt adaptation methods, where the models must remain robust to evolving needs in deployment.",
+      "authors": [
+        "Harsh Deshpande",
+        "Kushal Chawla",
+        "Sangwoo Cho",
+        "William Campbell"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-06-04T20:35:15+00:00",
+      "link": "https://arxiv.org/pdf/2606.06698v1",
+      "tags": [
+        "keyword:prompt-opt",
+        "query:prompt-opt"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "benchmark for evaluating prompt optimization methods under continual constraint adaptation",
+      "llm_evidence_cn": "用于评估提示持续约束适应优化方法的基准",
+      "llm_evidence": "用于评估提示持续约束适应优化方法的基准",
+      "canonical_evidence": "用于评估提示持续约束适应优化方法的基准",
+      "llm_tldr_en": "Introduces RECAP, a benchmark measuring continual-learning metrics like forgetting and regression in prompt optimization under proactive adaptation, targeting production systems with evolving constraints.",
+      "llm_tldr_cn": "当前提示优化评测假设静态或反应式约束，忽略了生产系统中需主动且立即适应新约束的连续设定。本文提出RECAP基准，在主动适应后测试协议下，测量提示优化方法在约束级别的遗忘、回归和前向迁移等持续学习现象，覆盖工具呼叫通知、策略更新等场景。RECAP为低误差容忍的生产环境中的提示优化方法提供了更严格的评估标准，有助于推动鲁棒且稳定的自动提示优化技术发展。",
+      "llm_tldr": "当前提示优化评测假设静态或反应式约束，忽略了生产系统中需主动且立即适应新约束的连续设定。本文提出RECAP基准，在主动适应后测试协议下，测量提示优化方法在约束级别的遗忘、回归和前向迁移等持续学习现象，覆盖工具呼叫通知、策略更新等场景。RECAP为低误差容忍的生产环境中的提示优化方法提供了更严格的评估标准，有助于推动鲁棒且稳定的自动提示优化技术发展。",
+      "llm_tags": [
+        "query:prompt-opt:composite"
+      ],
+      "matched_query_tag": "query:prompt-opt:composite",
+      "matched_query_text": "Papers central to 研究提示词优化的相关论文, especially work that connects or combines: techniques for optimizing prompts in language models; best practices for designing effective prompts; methods for fine-tuning prompts on downstream tasks; optimizing natural language instructions for model performance; automated search for optimal prompts; What are the latest techniques for automatic prompt optimization in large language models?; How to optimize prompts for specific downstream tasks like question answering?.",
+      "matched_requirement_id": "req-composite-prompt-opt",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.08715v1",
+      "source": "arxiv",
+      "title": "Operationalizing Linguistic Methods through Prompt-Engineering Skills: An Automatic Chinese Web Neologism Detection Pipeline",
+      "abstract": "We present a method for automatic Chinese web neologism detection that operationalizes traditional linguistic identification principles as prompt-engineering skills. The method has four stages: tokenizer-independent character n-gram candidate generation; dictionary anchoring with a Pointwise Mutual Information pre-filter; a well-formedness skill based on Chinese word-formation principles; and a combined rule and three-way classification skill that distinguishes neologism, entity, and none. Applied to the BAAI CCI 3.0 corpus (267M documents), the method produces 226,959 classified candidates including 4,853 labeled neologisms. To evaluate the method, we develop a per-stage conditional recall decomposition in which the pipeline's strict recall factors mathematically into the product of stage conditional recalls. Applied to Hou (2023) (4,199 entries), the decomposition exposes Stage 1 candidate coverage and Stage 4B LLM semantic judgment as the two bottlenecks (R=41.5% and 60.0% respectively), while intermediate stages are near-lossless. A length-stratified analysis further reveals that the structural well-formedness skill is length-invariant (>= 96.9%) whereas the semantic novelty-classification skill is length-dependent (65.6%/59.0%/44.1% across 2/3/4-character candidates), mapping a current boundary of skill-based linguistic operationalization. We release the method, pipeline outputs, and evaluation protocol as public resources.",
+      "authors": [
+        "Yufeng Wu",
+        "Meichun Liu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-07T16:13:06+00:00",
+      "link": "https://arxiv.org/pdf/2606.08715v1",
+      "tags": [
+        "keyword:prompt-opt"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "operationalizes linguistic principles as prompt-engineering skills for neologism detection",
+      "llm_evidence_cn": "将语言学原则操作化为提示工程技能用于新词检测",
+      "llm_evidence": "将语言学原则操作化为提示工程技能用于新词检测",
+      "canonical_evidence": "将语言学原则操作化为提示工程技能用于新词检测",
+      "llm_tldr_en": "Presents a pipeline that encodes traditional linguistic identification methods into prompt-engineering skills for automatic Chinese web neologism detection, achieving high recall with per-stage evaluation.",
+      "llm_tldr_cn": "针对中文网络新词检测任务，本文提出了一种将传统语言学识别原则转化为提示工程技能的自动化流水线。方法分四阶段：与分词器无关的字符n-gram候选生成、点互信息预过滤、基于构词法的合理性技能，以及结合规则与三分类的判别技能。在BAAI CCI 3.0语料库上产生22万分类候选，含4853个标注新词，并通过分阶段条件召回分解评估方法的有效性。该工作展示了如何将领域知识系统性地融入提示设计，为特定任务构建高效提示提供了可复用的范式。",
+      "llm_tldr": "针对中文网络新词检测任务，本文提出了一种将传统语言学识别原则转化为提示工程技能的自动化流水线。方法分四阶段：与分词器无关的字符n-gram候选生成、点互信息预过滤、基于构词法的合理性技能，以及结合规则与三分类的判别技能。在BAAI CCI 3.0语料库上产生22万分类候选，含4853个标注新词，并通过分阶段条件召回分解评估方法的有效性。该工作展示了如何将领域知识系统性地融入提示设计，为特定任务构建高效提示提供了可复用的范式。",
+      "llm_tags": [
+        "query:prompt-opt"
+      ],
+      "matched_query_tag": "query:prompt-opt",
+      "matched_query_text": "best practices for designing effective prompts",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
